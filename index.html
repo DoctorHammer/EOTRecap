@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>EOT Recap</title>
+    <meta name="EOT Recap" content="EOT Recap" >
+    <link rel="stylesheet" href="files/main.css">
+    <link rel="stylesheet" href="files/fonts.css">
+    <link rel="stylesheet" href="files/print.css" type="text/css" media="print" />
+    <script src="files/jquery.min.js"> </script>
+    <script src="files/jquery.repeatable.js"> </script>
+    <script src="files/skulpt/skulpt.js"> </script>
+    <script src="files/skulpt/skulpt-stdlib.js"> </script>
+
+
+<script type="text/javascript">
+     var popit = true;
+     window.onbeforeunload = function() { 
+          if(popit == true) {
+               popit = false;
+               return "Are you sure you want to leave?"; 
+          }
+     }
+</script>
+
+
+</head>
+
+<body>
+
+    
+    
+    <!--Top Table begins here -->
+    <table id="toptable" class="toptable">
+        <tr>
+            <td class="topleft">
+                <img class="logo" src="files/logo.svg" alt="nypd-patch-logo">
+            </td>
+
+            <td class="NYPD">
+                <p class="nypdtext">NYPD</p>
+                <p class="pcttext">19th Precinct</p>
+                <p class="eotrecaptext">End of Tour Recap</p>
+            </td>
+
+            <td class="topright">
+                <img class="logo" src="files/logo.svg" alt="nypd-patch-logo">
+            </td>
+        </tr>
+    </table>
+    <!-- Top Table ends here -->
+
+    <!-- Author info begins here -->
+    <table id="authorinfo" class="authortable">
+        <tr>
+
+            <td id="AuthorDateCol" class="AuthorDateCol">
+                <label for="date_picker" class="label-text">Date:</label>
+                <input type="date" id="date-picker" class="date-picker" name="date-picker" min="2018-01-01" max="2218-01-01">
+            </td>
+
+            <td id="AuthorPlatoonCol" class="AuthorPlatoonCol">
+                <label for="PlatoonPicker" class="label-text">Platoon:</label>
+                <select name="PlatoonPicker" id="PlatoonPicker" class="Platoon-picker">
+                    <option value="1st Platoon">1st Platoon</option>
+                    <option value="2nd Platoon">2nd Platoon</option>
+                    <option value="3rd Platoon">3rd Platoon</option>
+                </select>
+            </td>
+
+            <td id="AuthorSupervisorCol" class="AuthorSupervisorCol">
+                <label for="supervisor" class="label-text">LT/SGT:</label>
+                <input type="text" id="supervisor" class="supervisorform">
+            </td>
+        </tr>
+    </table>
+    <!-- Author info ends here -->
+
+
+
+    <!-- Section -->
+    <!-- Index Crime Recap -->
+    <table id="IndexCrimeReportTitle" class="titletable">
+        <tr>
+            <td colspan="6" class="NYPD">
+                <p class="eotrecaptext">Index Crime Recap
+                </p>
+            </td>
+        </tr>
+    </table>
+
+    <!-- Index Crime Recap Permanent begins here -->
+    <table id="IndexCrimeRecap_Perma" class="indexcrimerecap_perma">
+        <tr>
+            <td class="tdleft" colspan="2">
+                <label for="CrimeCrimePicker" class="label-text">Crime Type:</label>
+                <select name="SelectCrime" id="CrimeCrimePicker" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="Murder">Murder</option>
+                    <option value="Rape">Rape</option>
+                    <option value="Robbery">Robbery</option>
+                    <option value="Felony Assault">Felony Assault</option>
+                    <option value="Burglary">Burglary</option>
+                    <option value="Grand Larceny">Grand Larceny</option>
+                    <option value="GLA">GLA</option>
+                </select>
+            </td>
+
+            <td class="tdleft" colspan="2">
+                <label for="occtime" class="label-text">Occurrence Time:</label>
+                <input id="occtime" type="time" class="form-text">
+            </td>
+
+            <td class="tdright" colspan="2">
+                <input id="dvcheck" type="checkbox" class="form-text">
+                <label for="dvcheck" class="label-text">Domestic</label>
+
+                <input id="dvhischeck" type="checkbox" class="form-text">
+                <label for="dvhischeck" class="label-text">DV History</label>
+            </td>
+        </tr>
+
+
+        <tr>
+
+            <td class="tdpaddingleft" colspan="3">
+                <label for="crimelocation" class="label-text">Location:</label>
+                <span id="crimelocation" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+
+            <td class="tdpaddingleft" colspan="3">
+                <label for="crimeperp" class="label-text">Possible Perp/Suspect</label>
+                <span id="crimeperp" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td class="tdpaddingleft" colspan="3">
+                <label for="crimedesc" class="label-text">Description of Crime:</label>
+                <span id="crimedesc" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+
+            <td class="tdpaddingleft" colspan="3">
+                <label for="crimecanv" class="label-text">Locations / Results of Video Canvass:</label>
+                <span id="crimecanv" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+        </tr>
+
+
+    </table>
+    <!-- Index Crime Recap Permanent ends here -->
+
+    <!-- Index Crime Recap extra starts here -->
+    <!-- Template Code + Add Button -->
+    <form class="extracontainer">
+        <fieldset class="index_crimes">
+            <div class="repeatable">
+            </div>
+
+            <table class="buttonholder">
+                <tr>
+                <td colspan="6" class="tdright">
+                    <!-- Add Crime Button-->
+                    <input type="button" class="add" value="Add Crime">
+                    <!-- Add Crime Button -->
+                </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <!-- Index Crime Recap Extra -->
+    <script type="text/template" id="index_crimes">
+        <div class="field-group">
+                <table id="IndexCrimeRecap_Perma" class="indexcrimerecap_perma">
+                    <tr>
+                        <td class="tdleft" colspan="2">
+                            <label for="CrimeExtraCrimePicker" class="label-text">Crime Type:</label>
+                            <select name="SelectCrime" id="CrimeExtraCrimePicker" class="form-text">
+                                <option value="Select">Select</option>
+                                <option value="Murder">Murder</option>
+                                <option value="Rape">Rape</option>
+                                <option value="Robbery">Robbery</option>
+                                <option value="Felony Assault">Felony Assault</option>
+                                <option value="Burglary">Burglary</option>
+                                <option value="Grand Larceny">Grand Larceny</option>
+                                <option value="GLA">GLA</option>
+                            </select>
+                        </td>
+
+                        <td class="tdleft" colspan="2">
+                            <label for="occtime" class="label-text">Occurrence Time:</label>
+                            <input id="occtime" type="time" class="form-text">
+                        </td>
+
+                        <td class="tdright" colspan="2">
+                          <input id="dvcheck" type="checkbox" class="form-text">
+                          <label for="dvcheck" class="label-text">Domestic</label>
+
+                          <input id="dvcheck" type="checkbox" class="form-text">
+                          <label for="dvcheck" class="label-text">DV History</label>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+
+                      <td class="tdpaddingleft" colspan="3">
+                        <label for="crimelocation" class="label-text">Location:</label>
+              					<span id="crimelocation" class="textarea" role="textbox" contenteditable></span>
+                      </td>
+
+
+                      <td class="tdpaddingleft" colspan="3">
+                        <label for="crimeperp" class="label-text">Possible Perp/Suspect</label>
+              					<span id="crimeperp" class="textarea" role="textbox" contenteditable></span>
+                      </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                      <td class="tdpaddingleft" colspan="3">
+                        <label for="crimedesc" class="label-text">Description of Crime:</label>
+              					<span id="crimedesc" class="textarea" role="textbox" contenteditable></span>
+                      </td>
+
+
+                      <td class="tdpaddingleft" colspan="3">
+                        <label for="crimeperp" class="label-text">Locations / Results of Video Canvass:</label>
+              					<span id="crimeperp" class="textarea" role="textbox" contenteditable></span>
+                      </td>
+
+                    </tr>
+
+            <!-- Index Crime Recap Extra -->
+
+            <!-- Remove Crime Button -->
+
+                      <tr>
+                        <td colspan="6" class="buttonholder">
+                          <!-- Remove Crime Button-->
+                            <input type="button" class="delete" value="Remove Crime">
+                          <!-- Remove Crime Button -->
+                        </td>
+                      </tr>
+
+            <!-- Remove Crime Button -->
+              	</table>
+              </div>
+            </script>
+    <!-- Index Crime Recap Extra -->
+    <!-- Initialize Script -->
+    <script>
+        $(function() {
+            $(".index_crimes .repeatable").repeatable({
+                addTrigger: ".index_crimes .add",
+                deleteTrigger: ".index_crimes .delete",
+                template: "#index_crimes",
+                startWith: 1,
+                max: null
+            });
+        });
+    </script>
+    <!-- Initialize Script -->
+    <!-- Index Crime Recap extra ends here -->
+
+    <!-- Section -->
+    <!-- Index Crime Recap -->
+
+
+
+
+
+
+
+    <!-- Arrests -->
+    <!-- Section -->
+
+    <!-- Section Header -->
+    <table id="ArrestsTitle" class="titletable">
+        <tr>
+            <td colspan="6" class="NYPD">
+                <p class="eotrecaptext">Arrests
+                </p>
+                <p class="label-text">(Include arrests from all units/agencies)
+                </p>
+            </td>
+        </tr>
+    </table>
+    <!-- Section -->
+
+    <!-- Arrests Permanent begins here -->
+
+    <table id="Arrests_Perma" class="indexcrimerecap_perma">
+        <tr class="topaligntr">
+            <td class="tdpaddingleft" colspan="16">
+            </td>
+        </tr>
+        <tr class="topaligntr">
+            <td class="tdpaddingleft" colspan="8">
+                <label for="topcharge" class="label-text">Top Charge:</label>
+                <input type="text" id="topcharge" class="form-text">
+
+            </td>
+
+            <td class="tdpaddingleft" colspan="2">
+                <input id="Arrdvcheck" type="checkbox" class="form-text">
+                <label for="Arrdvcheck" class="label-text">Domestic</label>
+
+            </td>
+            <td class="tdpaddingleft" colspan="2">
+                <input id="hopecheck" type="checkbox" class="form-text">
+                <label for="hopecheck" class="label-text">H.O.P.E.</label>
+
+            </td>
+            <td class="tdpaddingleft" colspan="2">
+                <input id="datcheck" type="checkbox" class="form-text">
+                <label for="datcheck" class="label-text">DAT</label>
+
+            </td>
+            <td class="tdpaddingleft" colspan="2">
+                <input id="bwccheck" type="checkbox" class="form-text">
+                <label for="bwccheck" class="label-text">BWC shared w/ ADA</label>
+
+            </td>
+        </tr>
+
+        <tr>
+
+            <td class="tdleft" colspan="5">
+                <label for="ArrCrimePicker" class="label-text">Crime Type:</label>
+                <select name="SelectCrime" id="ArrCrimePicker" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="Felony">Felony</option>
+                    <option value="Misdemeanor">Misdemeanor</option>
+                </select>
+            </td>
+
+
+            <td class="tdleft" colspan="5">
+                <label for="ArrStopyesno" class="label-text">Stop Report Required?</label>
+                <select name="ArrStopyesno" id="ArrStopyesno" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </td>
+
+            <td class="tdleft" colspan="4">
+                <label for="arrPrioryesno" class="label-text">Priors?</label>
+                <select name="arrPrioryesno" id="arrPrioryesno" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Unknown">Unknown</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+
+            <td class="tdleft" colspan="6">
+                <label for="arrestlocation" class="label-text">Location:</label>
+                <span id="arrestlocation" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+            <td class="tdleft" colspan="1">
+
+            </td>
+
+            <td class="tdleft" colspan="5">
+                <label for="arrestperp" class="label-text">Perp:</label>
+                <span id="arrestperp" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td colspan="10">
+                <label for="crimedesc" class="label-text">Description of Arrest:</label>
+                <span class="textarea" role="textbox" contenteditable></span>
+            </td>
+        </tr>
+
+    </table>
+
+    <!-- Arrests Permanent ends here -->
+
+
+
+
+    <!-- Arrests extra starts here -->
+    <!-- Template Code + Add Button -->
+    <form class="extracontainer">
+        <fieldset class="extraarrests">
+
+            <div class="repeatable">
+            </div>
+
+            <table class="buttonholder">
+                <tr>
+                <td colspan="6" class="tdright">
+                    <!-- Add Arrest Button-->
+                    <input type="button" class="add" value="Add Arrest">
+                    <!-- Add Arrest Button -->
+                </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <!-- Template Code + Add Button -->
+
+
+    <!-- Extra Inside -->
+    <script type="text/template" id="extraarrests">
+        <div class="field-group">
+
+                <table id="IndexCrimeRecap_Perma" class="indexcrimerecap_perma">
+                  <tr class="topaligntr">
+                    <td class="tdpaddingleft" colspan="16">
+                  </td>
+                </tr>
+                  <tr class="topaligntr">
+                    <td class="tdpaddingleft" colspan="8">
+                      <label for="topcharge" class="label-text">Top Charge:</label>
+                      <input type="text" id="topcharge" class="form-text" >
+
+                    </td>
+
+                    <td class="tdpaddingleft"  colspan="2">
+                      <input id="dvcheck" type="checkbox" class="form-text">
+                      <label for="dvcheck" class="label-text">Domestic</label>
+
+                    </td>
+                    <td class="tdpaddingleft"  colspan="2">
+                      <input id="hopecheck" type="checkbox" class="form-text">
+          						<label for="hopecheck" class="label-text">H.O.P.E.</label>
+
+                    </td>
+                    <td class="tdpaddingleft"  colspan="2">
+                      <input id="datcheck" type="checkbox" class="form-text">
+                      <label for="datcheck" class="label-text">DAT</label>
+
+                    </td>
+                    <td class="tdpaddingleft"  colspan="2">
+                      <input id="bwccheck" type="checkbox" class="form-text">
+                      <label for="bwccheck" class="label-text">BWC shared w/ ADA</label>
+
+                    </td>
+                  </tr>
+
+                    <tr>
+
+                      <td class="tdleft" colspan="5">
+            						<label for="ArrExtraCrimePicker" class="label-text">Crime Type:</label>
+            						<select name="ArrExtraCrimePicker" id="ArrExtraCrimePicker" class="form-text">
+                          <option value="Select">Select</option>
+                          <option value="Felony">Felony</option>
+            							<option value="Misdemeanor">Misdemeanor</option>
+            						</select>
+            					</td>
+
+
+                      <td class="tdleft"  colspan="5">
+                          <label for="ArrStopExtrayesno" class="label-text">Stop Report Required?</label>
+                          <select name="ArrStopExtrayesno" id="ArrStopExtrayesno" class="form-text">
+                          <option value="Select">Select</option>
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                          </select>
+                        </td>
+
+                      <td class="tdleft"  colspan="4">
+                          <label for="ArrPriorExtrayesno" class="label-text">Priors?</label>
+                          <select name="ArrPriorExtrayesno" id="ArrPriorExtrayesno" class="form-text" >
+                          <option value="Select">Select</option>
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                          <option value="Unknown">Unknown</option>
+                          </select>
+                      </td>
+                    </tr>
+
+                    <tr>
+
+                      <td class="tdleft" colspan="6">
+                        <label for="arrestlocation" class="label-text">Location:</label>
+              					<span id="arrestlocation" class="textarea" role="textbox" contenteditable></span>
+                      </td>
+
+                      <td class="tdleft" colspan="1">
+
+                      </td>
+
+                      <td class="tdleft" colspan="5">
+                        <label for="arrestperp" class="label-text">Perp:</label>
+              					<span id="arrestperp" class="textarea" role="textbox" contenteditable></span>
+                      </td>
+
+                    </tr>
+
+            				<tr>
+            				  <td colspan="10">
+            					<label for="crimedesc" class="label-text">Description of Arrest:</label>
+            					<span class="textarea" role="textbox" contenteditable></span>
+            				  </td>
+            				</tr>
+
+            					    <!-- Remove Arrest Button -->
+            							<tr>
+            							  <td colspan="14" class="buttonholder">
+            								<!-- Remove Arrest Button-->
+            								  <input type="button" class="delete" value="Remove Arrest">
+            								<!-- Remove Arrest Button -->
+            							  </td>
+            							</tr>
+            					    <!-- Remove Arrest Button -->
+
+    						</table>
+    					</div>
+    				</script>
+
+    <!-- Extra Ends -->
+
+    <!-- Initialize Script -->
+    <script>
+        $(function() {
+            $(".extraarrests .repeatable").repeatable({
+                addTrigger: ".extraarrests .add",
+                deleteTrigger: ".extraarrests .delete",
+                template: "#extraarrests",
+                startWith: 1,
+                max: null
+            });
+        });
+    </script>
+    <!-- Initialize Script -->
+
+    <!-- Arrests extra ends here -->
+
+    <!-- Section -->
+
+    <!-- Arrests -->
+
+
+
+
+
+
+
+    <!-- Off Air Time -->
+    <!-- Section -->
+
+    <!-- Section Header -->
+    <table id="OATTitle" class="titletable">
+        <tr>
+            <td colspan="6" class="NYPD">
+                <p class="eotrecaptext">Off Air Time
+                </p>
+            </td>
+        </tr>
+    </table>
+    <!-- Section -->
+
+    <!-- OAT Permanent begins here -->
+
+    <table id="OAT_perma" class="oat_perma">
+
+        <tr class="topaligntr">
+            <td colspan="16">
+            </td>
+        </tr>
+
+        <tr class="topaligntr">
+            <td colspan="2">
+                <label for="oatsectorpicker" class="label-text">Sector:</label>
+                <select name="oatsectorpicker" id="oatsectorpicker" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="A">A</option>
+                    <option value="A2">A2</option>
+                    <option value="B">B</option>
+                    <option value="B2">B2</option>
+                    <option value="C">C</option>
+                    <option value="C2">C2</option>
+                    <option value="D">D</option>
+                    <option value="D2">D2</option>
+                </select>
+            </td>
+
+            <td class="tdpaddingleft" colspan="3">
+                <label for="condition" class="label-text">Condition:</label>
+                <span id="condition" class="textarea" role="textbox" contenteditable=""></span>
+            </td>
+
+
+            <td class="tdpaddingleft" colspan="3">
+                <label for="offairtime" class="label-text">Off Air Time:</label>
+                <span id="offairtime" class="textarea" role="textbox" contenteditable=""></span>
+            </td>
+
+
+
+            <td class="tdpaddingleft" colspan="8">
+                <label for="oatlocation" class="label-text">Location:</label>
+                <span id="oatlocation" class="textarea" role="textbox" contenteditable=""></span>
+            </td>
+
+        </tr>
+
+    </table>
+
+    <!-- OAT Permanent ends here -->
+
+
+
+
+    <!-- OAT extra starts here -->
+    <!-- Template Code + Add Button -->
+    <form class="extracontainer">
+        <fieldset class="extraoat">
+
+            <div class="repeatable">
+            </div>
+
+            <table class="buttonholder">
+                <tr>
+                <td colspan="6" class="tdright">
+                    <!-- Add OAT Button-->
+                    <input type="button" class="add" value="Add Another">
+                    <!-- Add OAT Button -->
+                </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <!-- Template Code + Add Button -->
+
+
+    <!-- Extra Inside -->
+    <script type="text/template" id="extraoat">
+        <div class="field-group">
+
+
+                            <table id="OAT_extra" class="oat_perma">
+
+                              <tr class="topaligntr">
+                                <td colspan="16">
+                                </td>
+
+                              <tr class="topaligntr">
+                                <td colspan="2">
+                                  <label for="oat_extra_sectorpicker" class="label-text">Sector:</label>
+                                  <select name="oat_extra_sectorpicker" id="oat_extra_sectorpicker" class="form-text">
+                                    <option value="Select">Select</option>
+                                    <option value="A">A</option>
+                                    <option value="A2">A2</option>
+                                    <option value="B">B</option>
+                                    <option value="B2">B2</option>
+                                    <option value="C">C</option>
+                                    <option value="C2">C2</option>
+                                    <option value="D">D</option>
+                                    <option value="D2">D2</option>
+                                  </select>
+                                </td>
+
+                                <td class="tdpaddingleft" colspan="3">
+                                  <label for="condition" class="label-text">Condition:</label>
+                                  <span id="condition" class="textarea" role="textbox" contenteditable=""></span>
+                                </td>
+
+
+                                <td class="tdpaddingleft" colspan="3">
+                                  <label for="offairtime" class="label-text">Off Air Time:</label>
+                                  <span id="offairtime" class="textarea" role="textbox" contenteditable=""></span>
+                                </td>
+
+
+
+                                <td class="tdpaddingleft" colspan="8">
+                                  <label for="oatlocation" class="label-text">Location:</label>
+                                  <span id="oatlocation" class="textarea" role="textbox" contenteditable=""></span>
+                                </td>
+
+                              </tr>
+
+
+
+            					    <!-- Remove OAT Button -->
+            							<tr>
+            							  <td colspan="16" class="buttonholder">
+            								<!-- Remove OAT Button-->
+            								  <input type="button" class="delete" value="Remove Current">
+            								<!-- Remove OAT Button -->
+            							  </td>
+            							</tr>
+            					    <!-- Remove OAT Button -->
+
+    						</table>
+    					</div>
+    				</script>
+
+    <!-- Extra Ends -->
+
+    <!-- Initialize Script -->
+    <script>
+        $(function() {
+            $(".extraoat .repeatable").repeatable({
+                addTrigger: ".extraoat .add",
+                deleteTrigger: ".extraoat .delete",
+                template: "#extraoat",
+                startWith: 1,
+                max: null
+            });
+        });
+    </script>
+    <!-- Initialize Script -->
+
+    <!-- OAT extra ends here -->
+
+    <!-- Section -->
+    <!-- OAT -->
+
+
+
+
+
+
+    <!-- Newsworthy -->
+    <!-- Section -->
+
+    <!-- Section Header -->
+    <table id="NewsTitle" class="titletable">
+        <tr>
+            <td colspan="6" class="NYPD">
+                <p class="eotrecaptext">Newsworthy/Unusual Incidents
+                </p>
+            </td>
+        </tr>
+    </table>
+    <!-- Section -->
+
+    <!-- Newsworthy Permanent begins here -->
+
+    <table id="news_perma" class="news_perma">
+
+        <tr class="topaligntr">
+            <td colspan="6">
+                <label for="incidentpicker" class="label-text">Incident Type</label>
+                <select name="incidentpicker" id="incidentpicker" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="Off Duty">Off Duty</option>
+                    <option value="Naloxone">Naloxone</option>
+                    <option value="Overdose">Overdose</option>
+                    <option value="CIS Job">CIS Job</option>
+                    <option value="Ped Struck">Ped Struck</option>
+                    <option value="Other">Other</option>
+                </select>
+            </td>
+
+            <td class="tdpaddingleft" colspan="8" rowspan="2">
+                <label for="details" class="label-text">MOS Responding / Location / Description:</label>
+                <span id="details" class="textareanews" role="textbox" contenteditable=""></span>
+            </td>
+        </tr>
+
+
+        <td class="tdpaddingleft" colspan="6">
+            <label for="oatother" class="label-text">If other, specify:</label>
+            <span id="oatother" class="textarea" role="textbox" contenteditable=""></span>
+        </td>
+
+        </tr>
+
+    </table>
+
+    <!-- Newsworthy Permanent ends here -->
+
+
+
+
+    <!-- Newsworthy extra starts here -->
+    <!-- Template Code + Add Button -->
+    <form class="extracontainer">
+        <fieldset class="extranews">
+
+            <div class="repeatable">
+            </div>
+
+            <table class="buttonholder">
+                <tr>
+                <td colspan="6" class="tdright">
+                    <!-- Add News Button-->
+                    <input type="button" class="add" value="Add Another">
+                    <!-- Add News Button -->
+                </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <!-- Template Code + Add Button -->
+
+
+    <!-- Extra Inside -->
+    <script type="text/template" id="extranews">
+        <div class="field-group">
+
+                <table id="news_perma" class="news_perma">
+
+                  <tr class="topaligntr">
+                    <td colspan="6">
+                      <label for="incidentpicker" class="label-text">Incident Type</label>
+                      <select name="incidentpicker" id="incidentpicker" class="form-text">
+                        <option value="Select">Select</option>
+                        <option value="Off Duty">Off Duty</option>
+                        <option value="Naloxone">Naloxone</option>
+                        <option value="Overdose">Overdose</option>
+                        <option value="CIS Job">CIS Job</option>
+                        <option value="Ped Struck">Ped Struck</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </td>
+
+                    <td class="tdpaddingleft" colspan="8" rowspan="2">
+                      <label for="details" class="label-text">MOS Responding / Location / Description:</label>
+                      <span id="details" class="textarea" role="textbox" contenteditable=""></span>
+                    </td>
+                  </tr>
+
+
+                    <td class="tdpaddingleft" colspan="6">
+                      <label for="offairtime" class="label-text">If other, specify:</label>
+                      <span id="offairtime" class="textarea" role="textbox" contenteditable=""></span>
+                    </td>
+
+                  </tr>
+
+
+
+            					    <!-- Remove News Button -->
+            							<tr>
+            							  <td colspan="16" class="buttonholder">
+            								<!-- Remove News Button-->
+            								  <input type="button" class="delete" value="Remove Current">
+            								<!-- Remove News Button -->
+            							  </td>
+            							</tr>
+            					    <!-- Remove News Button -->
+
+    						</table>
+    					</div>
+    				</script>
+
+    <!-- Extra Ends -->
+
+    <!-- Initialize Script -->
+    <script>
+        $(function() {
+            $(".extranews .repeatable").repeatable({
+                addTrigger: ".extranews .add",
+                deleteTrigger: ".extranews .delete",
+                template: "#extranews",
+                startWith: 1,
+                max: null
+            });
+        });
+    </script>
+    <!-- Initialize Script -->
+
+    <!-- News extra ends here -->
+
+    <!-- Section -->
+    <!-- Newsworthy -->
+
+
+
+
+
+
+    <!-- LPR -->
+    <!-- Section -->
+
+    <!-- Section Header -->
+    <table id="LPRTitle" class="titletable">
+        <tr>
+            <td colspan="6" class="NYPD">
+                <p class="eotrecaptext">Plate Reader RMP Assignment
+                </p>
+            </td>
+        </tr>
+    </table>
+    <!-- Section -->
+
+    <!-- LPR Permanent begins here -->
+
+    <table id="lpr_perma" class="lpr_perma">
+
+        <tr class="topaligntr">
+            <td class="tdpaddingleft" colspan="2">
+                <label for="rmpno" class="label-text">RMP#:</label>
+                <input type="text" id="rmpno" class="rmpno-form">
+            </td>
+
+            <td class="tdpaddingleft" colspan="3">
+                <label for="lpryesno" class="label-text">LPR Operational?</label>
+                <select name="lpryesno" id="lpryesno" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </td>
+
+            <td class="tdpaddingleft" colspan="2">
+                <label for="lprsectorpicker" class="label-text">Sector:</label>
+                <select name="lprsectorpicker" id="lprsectorpicker" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="A">A</option>
+                    <option value="A2">A2</option>
+                    <option value="B">B</option>
+                    <option value="B2">B2</option>
+                    <option value="C">C</option>
+                    <option value="C2">C2</option>
+                    <option value="D">D</option>
+                    <option value="D2">D2</option>
+                </select>
+            </td>
+
+
+            <td class="tdpaddingleft" colspan="5" rowspan="2">
+                <label for="mos1" class="label-text">MOS Assigned #1</label>
+                <span id="mos1" class="textarea" role="textbox" contenteditable=""></span>
+            </td>
+
+            <td class="tdpaddingleft" colspan="5" rowspan="2">
+                <label for="mos2" class="label-text">MOS Assigned #2</label>
+                <span id="mos2" class="textarea" role="textbox" contenteditable=""></span>
+            </td>
+        </tr>
+
+        <tr class="topaligntr">
+        </tr>
+
+        <tr class="topaligntr">
+            <td class="tdpaddingleft" colspan="6">
+                <input id="malfcheck" type="checkbox" class="form-text">
+                <label for="malfcheck" class="label-text">Malfunctions During Tour?</label>
+            </td>
+
+            <td class="tdpaddingleft" colspan="10">
+                <label for="problems" class="label-text">Describe any problems: (Indicate log # if out of service)</label>
+                <span id="problems" class="textarea" role="textbox" contenteditable=""></span>
+            </td>
+        </tr>
+
+        <tr class="topaligntr">
+            <td class="tdpaddingleft" colspan="3">
+                <label for="felarr" class="label-text">Felony Arrests</label>
+
+            </td>
+            <td class="tdpaddingleft" colspan="4">
+                <label for="misdarr" class="label-text">Misdemeanor Arrests</label>
+
+            </td>
+            <td class="tdpaddingleft" colspan="3">
+                <label for="summ" class="label-text">Summonses</label>
+
+            </td>
+            <td class="tdpaddingleft" colspan="6">
+                <label for="recveh" class="label-text">Recovered Vehicles</label>
+
+            </td>
+        </tr>
+
+
+        <tr class="topaligntr">
+            <td class="tdpaddingleft" colspan="3">
+
+                <input type="text" id="felarr" class="rmpno-form">
+            </td>
+            <td class="tdpaddingleft" colspan="4">
+
+                <input type="text" id="misdarr" class="rmpno-form">
+            </td>
+            <td class="tdpaddingleft" colspan="3">
+
+                <input type="text" id="summ" class="rmpno-form">
+            </td>
+            <td class="tdpaddingleft" colspan="6">
+
+                <input type="text" id="recveh" class="rmpno-form">
+            </td>
+        </tr>
+
+    </table>
+
+    <!-- LPR Permanent ends here -->
+
+
+    <!-- LPR extra starts here -->
+    <!-- Template Code + Add Button -->
+    <form class="extracontainer">
+        <fieldset class="extralpr">
+
+            <div class="repeatable">
+            </div>
+
+            <table class="buttonholder">
+                <tr>
+                <td colspan="6" class="tdright">
+                    <!-- Add LPR Button-->
+                    <input type="button" class="add" value="Add Another">
+                    <!-- Add LPR Button -->
+                </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <!-- Template Code + Add Button -->
+
+
+    <!-- Extra Inside -->
+    <script type="text/template" id="extralpr">
+        <div class="field-group">
+
+                <table id="lpr_perma" class="lpr_perma">
+
+                  <tr class="topaligntr">
+                    <td class="tdpaddingleft" colspan="2">
+                      <label for="rmpno" class="label-text">RMP#:</label>
+                      <input type="text" id="rmpno" class="rmpno-form" >
+                    </td>
+
+                    <td class="tdpaddingleft">
+                    <label for="lprExtrayesno" class="label-text">LPR Operational?</label>
+                    <select name="lprExtrayesno" id="lprExtrayesno" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    </select>
+                    </td>
+
+                    <td class="tdpaddingleft" colspan="2">
+                      <label for="lprextrasectorpicker" class="label-text">Sector:</label>
+                      <select name="lprextrasectorpicker" id="lprextrasectorpicker" class="form-text">
+                        <option value="Select">Select</option>
+                        <option value="A">A</option>
+                        <option value="A2">A2</option>
+                        <option value="B">B</option>
+                        <option value="B2">B2</option>
+                        <option value="C">C</option>
+                        <option value="C2">C2</option>
+                        <option value="D">D</option>
+                        <option value="D2">D2</option>
+                      </select>
+                    </td>
+
+
+                    <td class="tdpaddingleft" colspan="5" rowspan="2">
+                      <label for="details" class="label-text">MOS Assigned #1</label>
+                      <span id="details" class="textarea" role="textbox" contenteditable=""></span>
+                    </td>
+
+                    <td class="tdpaddingleft" colspan="5" rowspan="2">
+                      <label for="details" class="label-text">MOS Assigned #2</label>
+                      <span id="details" class="textarea" role="textbox" contenteditable=""></span>
+                    </td>
+                  </tr>
+
+                  <tr class="topaligntr">
+                  </tr>
+
+                  <tr class="topaligntr">
+                    <td class=tdpaddingleft" colspan="6">
+                      <input id="malfcheck" type="checkbox" class="form-text">
+                      <label for="malfcheck" class="label-text">Malfunctions During Tour?</label>
+                      </input>
+                    </td>
+
+                    <td class=tdpaddingleft" colspan="11">
+                      <label for="details" class="label-text">Describe any problems: (Indicate log # if out of service)</label>
+                      <span id="details" class="textarea" role="textbox" contenteditable=""></span>
+                    </td>
+                  </tr>
+
+                  <tr class="topaligntr">
+                    <td class="tdpaddingleft" colspan="3">
+                      <label for="felarr" class="label-text">Felony Arrests</label>
+
+                    </td>
+                    <td class="tdpaddingleft" colspan="4">
+                      <label for="misdarr" class="label-text">Misdemeanor Arrests</label>
+
+                    </td>
+                    <td class="tdpaddingleft" colspan="3">
+                      <label for="summ" class="label-text">Summonses</label>
+
+                    </td>
+                    <td class="tdpaddingleft" colspan="6">
+                      <label for="recveh" class="label-text">Recovered Vehicles</label>
+
+                    </td>
+                  </tr>
+
+
+                    <tr class="topaligntr">
+                      <td class="tdpaddingleft" colspan="3">
+
+                        <input type="text" id="felarr" class="rmpno-form" >
+                      </td>
+                      <td class="tdpaddingleft" colspan="4">
+
+                        <input type="text" id="misdarr" class="rmpno-form" >
+                      </td>
+                      <td class="tdpaddingleft" colspan="3">
+
+                        <input type="text" id="summ" class="rmpno-form" >
+                      </td>
+                      <td class="tdpaddingleft" colspan="6">
+
+                        <input type="text" id="recveh" class="rmpno-form" >
+                      </td>
+                    </tr>
+
+
+            					    <!-- Remove LPR Button -->
+            							<tr>
+            							  <td colspan="18" class="buttonholder">
+            								<!-- Remove LPR Button-->
+            								  <input type="button" class="delete" value="Remove Current">
+            								<!-- Remove LPR Button -->
+            							  </td>
+            							</tr>
+            					    <!-- Remove LPR Button -->
+
+    						</table>
+    					</div>
+    				</script>
+
+    <!-- Extra Ends -->
+
+    <!-- Initialize Script -->
+    <script>
+        $(function() {
+            $(".extralpr .repeatable").repeatable({
+                addTrigger: ".extralpr .add",
+                deleteTrigger: ".extralpr .delete",
+                template: "#extralpr",
+                startWith: 1,
+                max: null
+            });
+        });
+    </script>
+    <!-- Initialize Script -->
+
+    <!-- LPR extra ends here -->
+
+    <!-- Section -->
+    <!-- LPR -->
+
+
+
+
+
+
+
+
+    <!-- Comments -->
+    <!-- Section -->
+
+    <!-- Section Header -->
+    <table id="CommentsTitle" class="titletable">
+        <tr>
+            <td colspan="6" class="NYPD">
+                <p class="eotrecaptext">Additional Info / Comments / Feedback
+                </p>
+            </td>
+        </tr>
+    </table>
+    <!-- Section -->
+
+    <!-- Comments Permanent begins here -->
+
+    <table id="comments_perma" class="comments_perma">
+
+        <tr class="topaligntr">
+            <td class="tdpaddingleft" colspan="16">
+                <span id="comments_textarea" class="textareacomment" role="textbox" contenteditable=""></span>
+            </td>
+        </tr>
+
+    </table>
+
+    <!-- Comments Permanent ends here -->
+
+
+
+
+    <!-- Comments extra starts here -->
+    <!-- Template Code + Add Button -->
+    <form class="extracontainer">
+        <fieldset class="extracomments">
+
+            <div class="repeatable">
+            </div>
+
+            <table class="buttonholder">
+                <tr>
+                <td colspan="6" class="tdright">
+                    <!-- Add comments Button-->
+                    <input type="button" class="add" value="Add Another">
+                    <!-- Add comments Button -->
+                </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <!-- Template Code + Add Button -->
+
+
+    <!-- Extra Inside -->
+    <script type="text/template" id="extracomments">
+        <div class="field-group">
+
+
+                <table id="comments_perma" class="comments_perma">
+
+                  <tr class="topaligntr">
+                    <td class="tdpaddingleft" colspan= "16">
+                      <span id="condition" class="textareacomment" role="textbox" contenteditable=""></span>
+                    </td>
+                  </tr>
+
+
+
+            					    <!-- Remove comments Button -->
+            							<tr>
+            							  <td colspan="16" class="buttonholder">
+            								<!-- Remove comments Button-->
+            								  <input type="button" class="delete" value="Remove Current">
+            								<!-- Remove comments Button -->
+            							  </td>
+            							</tr>
+            					    <!-- Remove OAT Button -->
+
+    						</table>
+    					</div>
+    				</script>
+
+    <!-- Extra Ends -->
+
+    <!-- Initialize Script -->
+    <script>
+        $(function() {
+            $(".extracomments .repeatable").repeatable({
+                addTrigger: ".extracomments .add",
+                deleteTrigger: ".extracomments .delete",
+                template: "#extracomments",
+                startWith: 1,
+                max: null
+            });
+        });
+    </script>
+    <!-- Initialize Script -->
+
+    <!-- OAT extra ends here -->
+
+    <!-- Section -->
+    <!-- OAT -->
+
+
+
+
+    <!-- Script
+
+<script>
+$(document).ready(function(){
+  $("#savepdf").click(function(){
+    htmlToPdfMake('#htmlContent');
+});
+});
+
+function htmlToPdfMake(elementID)
+{
+    var fullText = "";
+    //var x = document.getElementById('htmlContent').elements;
+    //var x = $("a").parent(elementID)
+    var x = $(elementID).children();
+    $.each(x, function(index, value) {
+       //console.log(value);
+        fullText+=$(this).context.innerText + ",";
+        console.log($(this).context.innerText);
+    });
+
+    var dd = {
+	content: [
+		fullText
+	]
+    };
+        pdfMake.createPdf(dd).download('optionalName.pdf');
+        console.log(dd.content);
+
+    //console.log(x);
+
+    //var html = $(elementID).html();
+
+    //$("#result").text(html);
+
+    //var p = $(elementID).html();
+
+    //$("#resultPDF").text(p);
+    };
+</script>
+
+ -->
+
+
+
+
+
+    <!-- Print/Save Buttons  -->
+
+
+    <table class="buttonholder">
+        <tr>
+        <td class="tdmiddle">
+
+            <br>
+            <input type="button" id="printbutton" class="print" value="Print" onclick="window.print()">
+            <br>
+            <label for="printbutton" class="label-text">(Select "Save As PDF" or "Microsoft Print to PDF" as the printer)</label>
+
+        </td>
+
+        <!-- Save Button
+
+    <td class="tdmiddle">
+
+      <br>
+      <input type="button" id="savepdf" value="Save">
+
+    </td>
+
+-->
+        </tr>
+    </table>
+
+    <!-- <form action="/action_page.php"> </form> -->
+
+    <!-- Submit Button  -->
+
+
+
+    <!-- The End  -->
+
+    <!-- Made by Shawon -->
+
+    <!-- The End  -->
+
+</body></html>

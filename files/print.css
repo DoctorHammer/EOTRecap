@@ -1,0 +1,521 @@
+
+
+<!-- /* Body */ -->
+
+body, html {
+  max-width: 21.59cm;
+  margin: auto;
+
+}
+
+@page {
+    size: legal portrait;
+    margin: 0;
+}
+
+@page :footer {color: #fff }
+@page :header {color: #fff}
+
+table {
+      break-inside: avoid;
+}
+
+/* Enable this to have the page break after each table
+@media print {
+  fieldset {page-break-after: always;}
+
+}
+*/
+
+
+.sections {
+          break-inside: avoid;
+}
+
+
+<!-- /* Fonts */ -->
+
+
+
+<!-- /* Header */ -->
+
+.toptable {
+width: 100%;
+    border-collapse: collapse;
+    border: 0px solid black;
+    box-sizing: content-box;
+    table-layout: fixed;
+}
+
+.titletable {
+width: 100%;
+    border-collapse: collapse;
+    border: 0px solid black;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    line-height: 0px;
+    background-color: #d4f0ff;
+    break-inside: avoid;
+}
+
+
+.authortable {
+width: 100%;
+    border-collapse: separate;
+    border-spacing: 5px 5px;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+    table-layout: auto;
+    background-color: #9ec3e8;
+}
+
+
+.indexcrimerecap_perma {
+width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px 10px;
+    box-sizing: border-box;
+
+    border-top: 1px solid black;
+    border-bottom: 3px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    table-layout: fixed;
+}
+
+
+.oat_perma {
+width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px 10px;
+    box-sizing: border-box;
+    border-top: 1px solid black;
+    border-bottom: 3px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    table-layout: fixed;
+}
+
+.news_perma {
+width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px 10px;
+    box-sizing: border-box;
+    border-top: 1px solid black;
+    border-bottom: 3px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    table-layout: fixed;
+}
+
+.lpr_perma {
+width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px 10px;
+    box-sizing: border-box;
+    border-top: 1px solid black;
+    border-bottom: 3px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    table-layout: fixed;
+}
+
+
+.comments_perma {
+width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px 10px;
+    box-sizing: border-box;
+    border-top: 1px solid black;
+    border-bottom: 3px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    table-layout: fixed;
+}
+
+
+.topleft {
+text-align: left;
+    padding: 0px 10px 0px;
+
+}
+
+.topaligntr {
+  vertical-align: top;
+  break-inside: avoid;
+}
+
+.tdpaddingleft {
+ padding-right: 10px;
+ text-align: left;
+ break-inside: avoid;
+}
+
+.topright {
+text-align: right;
+    padding: 0px 10px 0px;
+}
+
+
+.NYPD {
+text-align: center;
+
+}
+
+.AuthorDateCol {
+    text-align: left;
+}
+
+
+.AuthorPlatoonCol {
+    text-align: center;
+}
+
+
+.AuthorSupervisorCol {
+    text-align: right;
+}
+
+.form-text {
+  font-family: Vitesse;
+  font-style: normal;
+  font-weight: 400;
+    font-size: 10pt;
+}
+
+
+.rmpno-form {
+  font-family: Vitesse;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10pt;
+  width: 4em;
+  break-inside: avoid;
+}
+
+.locationform {
+  font-family: Vitesse;
+  font-style: normal;
+  font-weight: 400;
+    font-size: 10pt;
+    width: 14em;
+    break-inside: avoid;
+}
+
+.perpform {
+  font-family: Vitesse;
+  font-style: normal;
+  font-weight: 400;
+    font-size: 10pt;
+        width: 14em;
+        break-inside: avoid;
+}
+
+
+.label-text {
+  font-family: Vitesse;
+  font-style: normal;
+  font-weight: 500;
+padding-left: 5px;
+font-size: 10pt;
+
+}
+
+.date-picker {
+  font-family: Vitesse;
+  font-style: normal;
+  font-weight: 400;
+width: 170px;
+text-align: right;
+font-size: 10pt;
+}
+
+.Platoon-picker {
+  font-family: Vitesse;
+  font-style: normal;
+  font-weight: 400;
+width: 150px;
+text-align: center;
+padding-left: 10px;
+font-size: 10pt;
+}
+
+.supervisorform {
+  font-family: Vitesse;
+  font-style: normal;
+  font-weight: 400;
+width: 14em;
+text-align: right;
+padding-left: 0px;
+font-size: 10pt;
+
+}
+
+
+
+
+
+.tdleft {
+text-align: left;
+break-inside: avoid;
+}
+
+.tdmiddle {
+text-align: center;
+break-inside: avoid;
+}
+
+.tdright {
+text-align: right;
+break-inside: avoid;
+
+}
+
+
+
+
+
+.nypdtext {
+  font-family: vitesse;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 28pt;
+    color: #1e5ce9;
+    line-height: 0;
+}
+
+
+.pcttext {
+  font-family: vitesse;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20pt;
+    color: #1e5ce9;
+    line-height: 0px;
+}
+
+.eotrecaptext {
+  font-family: vitesse;
+  font-style: normal;
+  font-weight: 500;
+    font-size: 16pt;
+    color: #000000;
+    line-height: 0px;
+
+}
+
+.input-wrap {
+  position: absolute;
+
+}
+.input-wrap .input {
+  position: absolute;
+  width: auto;
+  left: 0;
+
+}
+.width-machine {
+  /*   Sort of a magic number to add extra space for number spinner */
+  padding: 0 1rem;
+}
+
+
+.textarea {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  resize: vertical;
+  min-height: 40px;
+  max-width: inherit;
+  white-space:normal;
+  border: 1px solid #ccc;
+  font-family: vitesse;
+  font-style: normal;
+  font-weight:normal;
+  font-size: 10pt;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: normal;
+  break-inside: avoid;
+}
+
+.textarea[contenteditable]:empty::before {
+  content: "Click here to enter text";
+  color: gray;
+  font-family:vitesse light;
+  break-inside: avoid;
+}
+
+
+.nobreak {
+  page-break-inside: avoid !important;
+  margin: 4px 0 4px 0;
+}
+
+.logo {
+  position: inherit;
+  width: 95px;
+  height: 120px;
+}
+
+.textareacomment {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  resize: vertical;
+  min-height: 40px;
+  max-width: inherit;
+  white-space:normal;
+  border: 1px solid #ccc;
+  font-family: vitesse;
+  font-style: normal;
+  font-weight:normal;
+  font-size: 10pt;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  break-inside: avoid;
+}
+
+.textareacomment[contenteditable]:empty::before {
+  content: "Hospitalzied Prisoners, Department Vehicle Accidents, Level (1,2,3) Mobilizations... etc.";
+  color: gray;
+  font-family:vitesse light;
+  break-inside: avoid;
+}
+
+
+
+.textareanews {
+  display: block;
+  width: 100%;
+  overflow: visible;
+  resize: vertical;
+  min-height: 75px;
+  max-width: inherit;
+  white-space:normal;
+  border: 1px solid #ccc;
+  font-family: vitesse;
+  font-style: normal;
+  font-weight:normal;
+  font-size: 10pt;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  break-inside: avoid;
+}
+
+.textareanews[contenteditable]:empty::before {
+  content: "Click here to enter text";
+  color: gray;
+  font-family:vitesse light;
+  break-inside: avoid;
+}
+
+
+
+
+.occtimeform {
+content: "Click here to enter text";
+font-family: Vitesse;
+font-weight: light;
+text-align: left;
+padding-left: 0px;
+font-size: 10pt;
+break-inside: avoid;
+}
+
+.wideform {
+content: "Click here to enter text";
+font-family: Vitesse;
+font-weight: light;
+text-align: left;
+padding-left: 0px;
+font-size: 10pt;
+width: 100%;
+border: 1px solid #ccc;
+break-inside: avoid;
+}
+
+.extracontainer {
+border: none;
+
+}
+
+.index_crimes {
+border: none;
+}
+
+.extraarrests {
+border: none;
+}
+
+.extraoat {
+border: none;
+}
+
+
+.extranews {
+border: none;
+}
+
+
+.extralpr {
+border: none;
+}
+
+
+.extracomments {
+  border: none;
+}
+
+
+.buttonholder {
+width: 100%;
+text-align: right;
+border-collapse: collapse;
+border: 0px solid black;
+box-sizing: content-box;
+table-layout: fixed;
+
+}
+
+
+<!-- /* Buttons */ -->
+
+.saveaspdf {
+display: none;
+visibility: hidden;
+}
+
+.add {
+  display: none;
+  visibility: hidden;
+}
+
+.delete {
+  display: none;
+  visibility: hidden;
+}
+
+.print {
+  display: none;
+  visibility: hidden;
+}
+
+
+#add_button
+{
+       display: none;
+       visibility: hidden;
+}
+
+#remove_button
+{
+       display: none;
+       visibility: hidden;
+}
