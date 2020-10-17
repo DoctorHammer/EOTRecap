@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta name="robots" content="noindex">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,17 +12,15 @@
     <script src="files/jquery.min.js"> </script>
     <script src="files/jquery.repeatable.js"> </script>
 
-
-<script type="text/javascript">
-     var popit = true;
-     window.onbeforeunload = function() {
-          if(popit == true) {
-               popit = false;
-               return "Are you sure you want to leave?";
-          }
-     }
-</script>
-
+    <script type="text/javascript">
+         var popit = true;
+         window.onbeforeunload = function() {
+              if(popit == true) {
+                   popit = false;
+                   return "Are you sure you want to leave?";
+              }
+         }
+    </script>
 
 </head>
 
@@ -78,16 +76,21 @@
 
 
 
-    <!-- Section -->
+<!-- Section -->
     <!-- Index Crime Recap -->
-    <table id="IndexCrimeReportTitle" class="titletable">
-        <tr>
-            <td colspan="6" class="NYPD">
-                <p class="eotrecaptext">Index Crime Recap
-                </p>
-            </td>
-        </tr>
-    </table>
+
+    <!-- Section Header -->
+
+      <table id="IndexCrimeReportTitle" class="titletable">
+          <tr>
+              <td colspan="6" class="NYPD">
+                  <p class="eotrecaptext">Index Crime Recap
+                  </p>
+              </td>
+          </tr>
+      </table>
+
+    <!-- Section Header -->
 
     <!-- Index Crime Recap Permanent begins here -->
     <table id="IndexCrimeRecap_Perma" class="indexcrimerecap_perma">
@@ -271,17 +274,17 @@
     <!-- Initialize Script -->
     <!-- Index Crime Recap extra ends here -->
 
-    <!-- Section -->
     <!-- Index Crime Recap -->
 
+<!-- Section -->
 
 
 
 
 
-
+<!-- Section -->
     <!-- Arrests -->
-    <!-- Section -->
+
 
     <!-- Section Header -->
     <table id="ArrestsTitle" class="titletable">
@@ -294,7 +297,7 @@
             </td>
         </tr>
     </table>
-    <!-- Section -->
+    <!-- Section Header -->
 
     <!-- Arrests Permanent begins here -->
 
@@ -545,18 +548,17 @@
 
     <!-- Arrests extra ends here -->
 
-    <!-- Section -->
-
     <!-- Arrests -->
 
+<!-- Section -->
 
 
 
 
 
-
+<!-- Section -->
     <!-- Off Air Time -->
-    <!-- Section -->
+
 
     <!-- Section Header -->
     <table id="OATTitle" class="titletable">
@@ -567,7 +569,7 @@
             </td>
         </tr>
     </table>
-    <!-- Section -->
+    <!-- Section Header -->
 
     <!-- OAT Permanent begins here -->
 
@@ -724,16 +726,15 @@
 
     <!-- OAT extra ends here -->
 
-    <!-- Section -->
     <!-- OAT -->
+<!-- Section -->
 
 
 
 
-
-
+<!-- Section -->
     <!-- Newsworthy -->
-    <!-- Section -->
+
 
     <!-- Section Header -->
     <table id="NewsTitle" class="titletable">
@@ -744,7 +745,7 @@
             </td>
         </tr>
     </table>
-    <!-- Section -->
+    <!-- Section Header -->
 
     <!-- Newsworthy Permanent begins here -->
 
@@ -875,16 +876,15 @@
 
     <!-- News extra ends here -->
 
-    <!-- Section -->
     <!-- Newsworthy -->
+<!-- Section -->
 
 
 
 
-
-
+<!-- Section -->
     <!-- LPR -->
-    <!-- Section -->
+
 
     <!-- Section Header -->
     <table id="LPRTitle" class="titletable">
@@ -895,7 +895,7 @@
             </td>
         </tr>
     </table>
-    <!-- Section -->
+    <!-- Section Header -->
 
     <!-- LPR Permanent begins here -->
 
@@ -1160,18 +1160,16 @@
 
     <!-- LPR extra ends here -->
 
-    <!-- Section -->
     <!-- LPR -->
+<!-- Section -->
 
 
 
 
 
-
-
-
+  <!-- Section -->
     <!-- Comments -->
-    <!-- Section -->
+
 
     <!-- Section Header -->
     <table id="CommentsTitle" class="titletable">
@@ -1182,7 +1180,7 @@
             </td>
         </tr>
     </table>
-    <!-- Section -->
+    <!-- Section Header -->
 
     <!-- Comments Permanent begins here -->
 
@@ -1268,98 +1266,37 @@
     </script>
     <!-- Initialize Script -->
 
-    <!-- OAT extra ends here -->
+    <!-- Comments extra ends here -->
 
-    <!-- Section -->
-    <!-- OAT -->
+    <!-- Comments -->
 
-
-
-
-    <!-- Script
-
-<script>
-$(document).ready(function(){
-  $("#savepdf").click(function(){
-    htmlToPdfMake('#htmlContent');
-});
-});
-
-function htmlToPdfMake(elementID)
-{
-    var fullText = "";
-    //var x = document.getElementById('htmlContent').elements;
-    //var x = $("a").parent(elementID)
-    var x = $(elementID).children();
-    $.each(x, function(index, value) {
-       //console.log(value);
-        fullText+=$(this).context.innerText + ",";
-        console.log($(this).context.innerText);
-    });
-
-    var dd = {
-	content: [
-		fullText
-	]
-    };
-        pdfMake.createPdf(dd).download('optionalName.pdf');
-        console.log(dd.content);
-
-    //console.log(x);
-
-    //var html = $(elementID).html();
-
-    //$("#result").text(html);
-
-    //var p = $(elementID).html();
-
-    //$("#resultPDF").text(p);
-    };
-</script>
-
- -->
+<!-- Section -->
 
 
 
-
-
-    <!-- Print/Save Buttons  -->
-
+<!-- Print/Save Buttons  -->
 
     <table class="buttonholder">
-        <tr>
+      <tr>
         <td class="tdmiddle">
 
             <br>
             <input type="button" id="printbutton" class="print" value="Print" onclick="window.print()">
             <br>
-            <label for="printbutton" class="label-text">(Select "Save As PDF" or "Microsoft Print to PDF" as the printer)</label>
+            <label for="printbutton" class="print-text">(Select "Save As PDF" or "Microsoft Print to PDF" as the printer)</label>
 
         </td>
+      </tr>
 
-        <!-- Save Button
-
-    <td class="tdmiddle">
-
-      <br>
-      <input type="button" id="savepdf" value="Save">
-
-    </td>
-
--->
-        </tr>
     </table>
 
-    <!-- <form action="/action_page.php"> </form> -->
+<!-- Print/Save Buttons  -->
 
-    <!-- Submit Button  -->
-
-
-
-    <!-- The End  -->
+<!-- The End  -->
 
     <!-- Made by Shawon -->
 
-    <!-- The End  -->
+<!-- The End  -->
 
-</body></html>
+</body>
+</html>
