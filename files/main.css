@@ -494,6 +494,7 @@ table-layout: fixed;
 }
 
 
+
 .delete:hover, .delete:focus {
     box-shadow: 0 0 4px 0 #f22b1d inset, 0 0 3px 3px #ffd3a1;
     color: #000;
@@ -519,6 +520,14 @@ table-layout: fixed;
 
 }
 
+
+.print-text {
+  font-family: Vitesse;
+  font-style: normal;
+  font-weight: 500;
+  padding-left: 5px;
+  font-size: 10pt;
+}
 
 
 #savepdf {
