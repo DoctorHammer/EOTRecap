@@ -372,6 +372,9 @@ select:hover {
   font-family:vitesse light;
 }
 
+.textareacomment:hover {
+    box-shadow: 0 0 0px 0 inset, 0 0 2px 2px #abeaff;
+}
 
 
 .textareanews {
@@ -399,7 +402,9 @@ select:hover {
   font-family:vitesse light;
 }
 
-
+.textareanews:hover {
+    box-shadow: 0 0 0px 0 inset, 0 0 2px 2px #abeaff;
+}
 
 
 .occtimeform {

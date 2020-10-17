@@ -507,6 +507,11 @@ visibility: hidden;
   visibility: hidden;
 }
 
+.print-text {
+  display: none;
+  visibility: hidden;
+}
+
 
 #add_button
 {
