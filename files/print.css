@@ -487,10 +487,11 @@ table-layout: fixed;
 
 <!-- /* Buttons */ -->
 
-.saveaspdf {
-display: none;
-visibility: hidden;
+.bottombuttonsholder {
+  display: none;
+  visibility: hidden;
 }
+
 
 .add {
   display: none;
@@ -513,14 +514,7 @@ visibility: hidden;
 }
 
 
-#add_button
-{
-       display: none;
-       visibility: hidden;
-}
-
-#remove_button
-{
-       display: none;
-       visibility: hidden;
+.email-text {
+  display: none;
+  visibility: hidden;
 }

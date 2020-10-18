@@ -463,25 +463,27 @@ border: none;
 .buttonholder {
 width: 100%;
 text-align: right;
-border-collapse: collapse;
-border: 0px solid black;
-box-sizing: content-box;
-table-layout: fixed;
+border-top: 0px solid black;
+border-bottom: 0px solid black;
+border-left: 0px solid black;
+border-right: 0px solid black;
 
 }
 
 <!-- /* Buttons */ -->
 
+
 .add {
   font-family:vitesse;
   font-weight:bold;
   width: 150px;
+  border-radius: 15px;
   background-color:#faffe8;
 }
 
-.add:hover {
+.add:hover, .add:focus {
     box-shadow: 0 0 4px 0 #3bc442 inset, 0 0 3px 3px #6cf589;
-    color: #000;
+    color: #076325;
     border-color: #1cd651;
 }
 
@@ -489,6 +491,7 @@ table-layout: fixed;
   font-family:vitesse;
   font-weight:bold;
   width: 150px;
+  border-radius: 15px;
   background-color:#ffe4bd;
   color:black;
 }
@@ -497,62 +500,78 @@ table-layout: fixed;
 
 .delete:hover, .delete:focus {
     box-shadow: 0 0 4px 0 #f22b1d inset, 0 0 3px 3px #ffd3a1;
-    color: #000;
+    color: #ff1414;
     border-color: #d6351c;
+}
+
+
+.bottombuttonsholder {
+width: 100%;
+border-spacing: 10px 10px;
+box-sizing: border-box;
+border-top: 2px solid #407ded;
+border-bottom: 0px solid #407ded;
+border-left: 0px solid black;
+border-right: 0px solid black;
+margin-top: 25px;
+margin-bottom: 10px;
+table-layout: auto;
 }
 
 .print {
   font-family:vitesse;
   font-weight:bold;
   font-size: 14pt;
-  width: 200px;
-  background-color:#d8ff17;
-  border-color: #3498db;
+  width: 250px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  background-color:#77c3f7;
+  border-color: #20f7ed;
   color: #000;
-  box-shadow: 0 0 40px 40px #d8ff17 inset, 0 0 0 0 #d8ff17;
+  box-shadow: 0 0 40px 40px #75ddff inset, 0 0 0 0 #d8ff17;
 
 }
 
 .print:hover, .print:focus {
-    box-shadow: 0 0 5px 0 #4fff30 inset, 0 0 5px 3px #4fff30;
-    border-color: #1cd651;
+    box-shadow: 0 0 5px 0 #99f1ff inset, 0 0 5px 3px #12a4ff;
+    border-color: #20f7ed;
     color: #000;
-
 }
 
 
 .print-text {
   font-family: Vitesse;
   font-style: normal;
-  font-weight: 500;
+  font-size: 12pt;
   padding-left: 5px;
   font-size: 10pt;
 }
 
-
-#savepdf {
+.email {
   font-family:vitesse;
   font-weight:bold;
   font-size: 14pt;
-  width: 200px;
-  background-color:#fcd143;
+  width: 250px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  background-color:#77c3f7;
+  border-color: #20f7ed;
+  color: #000;
+  box-shadow: 0 0 40px 40px #75ddff inset, 0 0 0 0 #d8ff17;
+
+}
+
+.email:hover, .email:focus {
+  box-shadow: 0 0 5px 0 #99f1ff inset, 0 0 5px 3px #12a4ff;
+  border-color: #20f7ed;
+    color: #000;
 }
 
 
-#add_button
-{
-       display: block;
-	   float: right;
-	   width: 100px;
-	   padding: 10px;
-}
-
-#remove_button
-{
-       display: block;
-	   float: left;
-	   width: 100px;
-	   padding: 10px;
-	   background-color:yellow;
-	   color:black;
+.email-text {
+  font-family: Vitesse;
+  font-style: normal;
+  font-size: 12pt;
+  padding-left: 5px;
+  font-size: 10pt;
 }

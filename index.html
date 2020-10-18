@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Made by Cadet Shawon -->
     <meta name="robots" content="noindex">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <script src="files/jquery.repeatable.js"> </script>
 
     <script type="text/javascript">
+      // Warn when user tries to reload/ leave page
          var popit = true;
          window.onbeforeunload = function() {
               if(popit == true) {
@@ -22,10 +24,34 @@
          }
     </script>
 
+    <script>
+      // Open mailto links in a new tab
+      function mailto(email, subject, body) {
+          var url;
+          url = 'mailto:'
+      				+ email
+      				;
+          url += '?subject='
+      				+ subject
+      				+ encodeURIComponent("EOT Recap - ")
+      				+ encodeURIComponent(document.getElementById('date-picker').value)
+      				+ encodeURIComponent(" - ")
+      				+ encodeURIComponent(document.getElementById('PlatoonPicker').value)
+      				+ encodeURIComponent(" - ")
+      				+ encodeURIComponent(document.getElementById('supervisor').value)
+      				;
+          url += '&body='
+      				+ body
+      				+ encodeURIComponent("(Please locate and attach the file you've saved as PDF. Remove this line before sending.)")
+      				;
+          window.open(url)
+      				;
+      }
+    </script>
+
 </head>
 
 <body>
-
 
 
     <!--Top Table begins here -->
@@ -1209,7 +1235,7 @@
 
             <table class="buttonholder">
                 <tr>
-                <td colspan="6" class="tdright">
+                <td colspan="6" class="buttonholder">
                     <!-- Add comments Button-->
                     <input type="button" class="add" value="Add Another">
                     <!-- Add comments Button -->
@@ -1244,7 +1270,7 @@
             								<!-- Remove comments Button -->
             							  </td>
             							</tr>
-            					    <!-- Remove OAT Button -->
+            					    <!-- Remove comments Button -->
 
     						</table>
     					</div>
@@ -1274,31 +1300,34 @@
 
 
 
+
+
 <!-- Print/Save Buttons  -->
 
-    <table class="buttonholder">
+    <table class="bottombuttonsholder">
       <tr>
-        <td class="tdmiddle">
+        <td class="tdleft">
 
-            <br>
-            <input type="button" id="printbutton" class="print" value="Print" onclick="window.print()">
-            <br>
+            <input type="button" id="printbutton" class="print" value="1. Save as PDF" onclick="window.print()">
+              <br>
             <label for="printbutton" class="print-text">(Select "Save As PDF" or "Microsoft Print to PDF" as the printer)</label>
-            <br>
-            <br>
+
+        </td>
+
+        <td class="tdright">
+
+            <input type="button" id="emailbutton" class="email" value="2. Send Email" onclick="mailto('', '', '');event.preventDefault()">
+              <br>
+            <label for="printbutton" class="email-text">(Attach the PDF file you just saved)</label>
 
         </td>
       </tr>
-
     </table>
 
 <!-- Print/Save Buttons  -->
 
-<!-- The End  -->
+<!-- Made by Shawon -->
 
-    <!-- Made by Shawon -->
-
-<!-- The End  -->
 
 </body>
 </html>
