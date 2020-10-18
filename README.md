@@ -1,9 +1,13 @@
 # EOTRecap
- Personal Project for Work
+(Personal Project for Work)
 
-*PERSONAL*
 
-The content here are not necessarily sensitive, but still don't replicate any of these.
+[Click here to preview](https://doctorhammer.github.io/EOTRecap)
+
+
+**PERSONAL**
+
+The contents in here are not necessarily sensitive, but still don't replicate any of these.
 I just needed a way to keep, backup, and review this project.
 
 If you don't have any business being here, kindly click away.
