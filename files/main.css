@@ -459,6 +459,17 @@ border: none;
   border: none;
 }
 
+.easteregg {
+  font-family: Vitesse;
+  font-style: light;
+  font-size: 8pt;
+  color: transparent;
+}
+
+
+
+<!-- /* Buttons */ -->
+
 
 .buttonholder {
 width: 100%;
@@ -470,7 +481,6 @@ border-right: 0px solid black;
 
 }
 
-<!-- /* Buttons */ -->
 
 
 .add {

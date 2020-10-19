@@ -474,6 +474,15 @@ border: none;
 }
 
 
+.easteregg {
+  display: none;
+  visibility: hidden;
+}
+
+
+
+<!-- /* Buttons */ -->
+
 .buttonholder {
 width: 100%;
 text-align: right;
@@ -484,8 +493,6 @@ table-layout: fixed;
 
 }
 
-
-<!-- /* Buttons */ -->
 
 .bottombuttonsholder {
   display: none;
