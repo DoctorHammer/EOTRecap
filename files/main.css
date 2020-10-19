@@ -367,7 +367,7 @@ select:hover {
 }
 
 .textareacomment[contenteditable]:empty::before {
-  content: "Hospitalzied Prisoners, Department Vehicle Accidents, Level (1,2,3) Mobilizations... etc.";
+  content: "Hospitalized Prisoners, Department Vehicle Accidents, Level (1,2,3) Mobilizations... etc.";
   color: gray;
   font-family:vitesse light;
 }
