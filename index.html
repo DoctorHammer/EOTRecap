@@ -85,6 +85,14 @@
                 <input type="date" id="date-picker" class="date-picker" name="date-picker" min="2018-01-01" max="2218-01-01">
             </td>
 
+                <script>
+                // Get today's date
+                var today = new Date();
+
+                var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                document.getElementById("date-picker").value = date;
+                </script>
+
             <td id="AuthorPlatoonCol" class="AuthorPlatoonCol">
                 <label for="PlatoonPicker" class="label-text">Platoon:</label>
                 <select name="PlatoonPicker" id="PlatoonPicker" class="Platoon-picker">
@@ -101,6 +109,9 @@
         </tr>
     </table>
     <!-- Author info ends here -->
+
+
+
 
 
 
