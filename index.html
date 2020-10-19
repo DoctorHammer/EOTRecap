@@ -82,14 +82,20 @@
 
             <td id="AuthorDateCol" class="AuthorDateCol">
                 <label for="date_picker" class="label-text">Date:</label>
-                <input type="date" id="date-picker" class="date-picker" name="date-picker" min="2018-01-01" max="2218-01-01">
+                <input type="text" id="date-picker" class="date-picker" name="date-picker" min="2018-01-01" max="2218-01-01">
             </td>
 
                 <script>
                 // Get today's date
                 var today = new Date();
 
-                var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+                var date =
+                (today.getMonth()+1)
+                +'-'
+                +today.getDate()
+                +'-'
+                +today.getFullYear();
+
                 document.getElementById("date-picker").value = date;
                 </script>
 
@@ -941,13 +947,15 @@
     <table id="lpr_perma" class="lpr_perma">
 
         <tr class="topaligntr">
-            <td class="tdpaddingleft" colspan="2">
+            <td class="tdmiddle" colspan="2">
                 <label for="rmpno" class="label-text">RMP#:</label>
+                <br><br>
                 <input type="text" id="rmpno" class="rmpno-form">
             </td>
 
-            <td class="tdpaddingleft" colspan="3">
+            <td class="tdmiddle" colspan="4">
                 <label for="lpryesno" class="label-text">LPR Operational?</label>
+                <br><br>
                 <select name="lpryesno" id="lpryesno" class="form-text">
                     <option value="Select">Select</option>
                     <option value="Yes">Yes</option>
@@ -955,8 +963,9 @@
                 </select>
             </td>
 
-            <td class="tdpaddingleft" colspan="2">
+            <td class="tdmiddle" colspan="3">
                 <label for="lprsectorpicker" class="label-text">Sector:</label>
+                <br><br>
                 <select name="lprsectorpicker" id="lprsectorpicker" class="form-text">
                     <option value="Select">Select</option>
                     <option value="A">A</option>
@@ -971,12 +980,12 @@
             </td>
 
 
-            <td class="tdpaddingleft" colspan="5" rowspan="2">
+            <td class="tdpaddingleft" colspan="4" rowspan="2">
                 <label for="mos1" class="label-text">MOS Assigned #1</label>
                 <span id="mos1" class="textarea" role="textbox" contenteditable=""></span>
             </td>
 
-            <td class="tdpaddingleft" colspan="5" rowspan="2">
+            <td class="tdpaddingleft" colspan="4" rowspan="2">
                 <label for="mos2" class="label-text">MOS Assigned #2</label>
                 <span id="mos2" class="textarea" role="textbox" contenteditable=""></span>
             </td>
@@ -987,30 +996,30 @@
 
         <tr class="topaligntr">
             <td class="tdpaddingleft" colspan="6">
-                <input id="malfcheck" type="checkbox" class="form-text">
+                <input id="malfcheck" type="checkbox" class="form-text" vertical>
                 <label for="malfcheck" class="label-text">Malfunctions During Tour?</label>
             </td>
 
-            <td class="tdpaddingleft" colspan="10">
+            <td class="tdpaddingleft" colspan="11">
                 <label for="problems" class="label-text">Describe any problems: (Indicate log # if out of service)</label>
                 <span id="problems" class="textarea" role="textbox" contenteditable=""></span>
             </td>
         </tr>
 
         <tr class="topaligntr">
-            <td class="tdpaddingleft" colspan="3">
+            <td class="tdmiddle" colspan="4">
                 <label for="felarr" class="label-text">Felony Arrests</label>
 
             </td>
-            <td class="tdpaddingleft" colspan="4">
+            <td class="tdmiddle" colspan="5">
                 <label for="misdarr" class="label-text">Misdemeanor Arrests</label>
 
             </td>
-            <td class="tdpaddingleft" colspan="3">
+            <td class="tdmiddle" colspan="3">
                 <label for="summ" class="label-text">Summonses</label>
 
             </td>
-            <td class="tdpaddingleft" colspan="6">
+            <td class="tdmiddle" colspan="5">
                 <label for="recveh" class="label-text">Recovered Vehicles</label>
 
             </td>
@@ -1018,19 +1027,19 @@
 
 
         <tr class="topaligntr">
-            <td class="tdpaddingleft" colspan="3">
+            <td class="tdmiddle" colspan="4">
 
                 <input type="text" id="felarr" class="rmpno-form">
             </td>
-            <td class="tdpaddingleft" colspan="4">
+            <td class="tdmiddle" colspan="5">
 
                 <input type="text" id="misdarr" class="rmpno-form">
             </td>
-            <td class="tdpaddingleft" colspan="3">
+            <td class="tdmiddle" colspan="3">
 
                 <input type="text" id="summ" class="rmpno-form">
             </td>
-            <td class="tdpaddingleft" colspan="6">
+            <td class="tdmiddle" colspan="5">
 
                 <input type="text" id="recveh" class="rmpno-form">
             </td>
@@ -1065,28 +1074,30 @@
 
     <!-- Extra Inside -->
     <script type="text/template" id="extralpr">
-        <div class="field-group">
+      <div class="field-group">
 
-                <table id="lpr_perma" class="lpr_perma">
+          <table id="lpr_extra" class="lpr_perma">
+            <tr class="topaligntr">
+                <td class="tdmiddle" colspan="2">
+                    <label for="rmpnoextra" class="label-text">RMP#:</label>
+                    <br><br>
+                    <input type="text" id="rmpnoextra" class="rmpno-form">
+                </td>
 
-                  <tr class="topaligntr">
-                    <td class="tdpaddingleft" colspan="2">
-                      <label for="rmpno" class="label-text">RMP#:</label>
-                      <input type="text" id="rmpno" class="rmpno-form" >
-                    </td>
-
-                    <td class="tdpaddingleft">
-                    <label for="lprExtrayesno" class="label-text">LPR Operational?</label>
-                    <select name="lprExtrayesno" id="lprExtrayesno" class="form-text">
-                    <option value="Select">Select</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
+                <td class="tdmiddle" colspan="4">
+                    <label for="lpryesnoextra" class="label-text">LPR Operational?</label>
+                    <br><br>
+                    <select name="lpryesno" id="lpryesnoextra" class="form-text">
+                        <option value="Select">Select</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
-                    </td>
+                </td>
 
-                    <td class="tdpaddingleft" colspan="2">
-                      <label for="lprextrasectorpicker" class="label-text">Sector:</label>
-                      <select name="lprextrasectorpicker" id="lprextrasectorpicker" class="form-text">
+                <td class="tdmiddle" colspan="2">
+                    <label for="lprsectorpickerextra" class="label-text">Sector:</label>
+                    <br><br>
+                    <select name="lprsectorpickerextra" id="lprsectorpickerextra" class="form-text">
                         <option value="Select">Select</option>
                         <option value="A">A</option>
                         <option value="A2">A2</option>
@@ -1096,90 +1107,90 @@
                         <option value="C2">C2</option>
                         <option value="D">D</option>
                         <option value="D2">D2</option>
-                      </select>
-                    </td>
+                    </select>
+                </td>
 
 
-                    <td class="tdpaddingleft" colspan="5" rowspan="2">
-                      <label for="details" class="label-text">MOS Assigned #1</label>
-                      <span id="details" class="textarea" role="textbox" contenteditable=""></span>
-                    </td>
+                <td class="tdpaddingleft" colspan="4" rowspan="2">
+                    <label for="mos1extra" class="label-text">MOS Assigned #1</label>
+                    <span id="mos1extra" class="textarea" role="textbox" contenteditable=""></span>
+                </td>
 
-                    <td class="tdpaddingleft" colspan="5" rowspan="2">
-                      <label for="details" class="label-text">MOS Assigned #2</label>
-                      <span id="details" class="textarea" role="textbox" contenteditable=""></span>
-                    </td>
-                  </tr>
+                <td class="tdpaddingleft" colspan="5" rowspan="2">
+                    <label for="mos2extra" class="label-text">MOS Assigned #2</label>
+                    <span id="mos2extra" class="textarea" role="textbox" contenteditable=""></span>
+                </td>
+            </tr>
 
-                  <tr class="topaligntr">
-                  </tr>
+            <tr class="topaligntr">
+            </tr>
 
-                  <tr class="topaligntr">
-                    <td class=tdpaddingleft" colspan="6">
-                      <input id="malfcheck" type="checkbox" class="form-text">
-                      <label for="malfcheck" class="label-text">Malfunctions During Tour?</label>
-                      </input>
-                    </td>
+            <tr class="topaligntr">
 
-                    <td class=tdpaddingleft" colspan="11">
-                      <label for="details" class="label-text">Describe any problems: (Indicate log # if out of service)</label>
-                      <span id="details" class="textarea" role="textbox" contenteditable=""></span>
-                    </td>
-                  </tr>
+                <td class="tdpaddingleft" colspan="6">
+                    <input id="malfcheckextra" type="checkbox" class="form-text" vertical>
+                    <label for="malfcheckextra" class="label-text">Malfunctions During Tour?</label>
+                </td>
 
-                  <tr class="topaligntr">
-                    <td class="tdpaddingleft" colspan="3">
-                      <label for="felarr" class="label-text">Felony Arrests</label>
+                <td class="tdpaddingleft" colspan="11">
+                    <label for="problemsextra" class="label-text">Describe any problems: (Indicate log # if out of service)</label>
+                    <span id="problemsextra" class="textarea" role="textbox" contenteditable=""></span>
+                </td>
+            </tr>
 
-                    </td>
-                    <td class="tdpaddingleft" colspan="4">
-                      <label for="misdarr" class="label-text">Misdemeanor Arrests</label>
+            <tr class="topaligntr">
+                <td class="tdmiddle" colspan="4">
+                    <label for="felarrextra" class="label-text">Felony Arrests</label>
 
-                    </td>
-                    <td class="tdpaddingleft" colspan="3">
-                      <label for="summ" class="label-text">Summonses</label>
+                </td>
+                <td class="tdmiddle" colspan="5">
+                    <label for="misdarrextra" class="label-text">Misdemeanor Arrests</label>
 
-                    </td>
-                    <td class="tdpaddingleft" colspan="6">
-                      <label for="recveh" class="label-text">Recovered Vehicles</label>
+                </td>
+                <td class="tdmiddle" colspan="3">
+                    <label for="summextra" class="label-text">Summonses</label>
 
-                    </td>
-                  </tr>
+                </td>
+                <td class="tdmiddle" colspan="5">
+                    <label for="recvehextra" class="label-text">Recovered Vehicles</label>
 
-
-                    <tr class="topaligntr">
-                      <td class="tdpaddingleft" colspan="3">
-
-                        <input type="text" id="felarr" class="rmpno-form" >
-                      </td>
-                      <td class="tdpaddingleft" colspan="4">
-
-                        <input type="text" id="misdarr" class="rmpno-form" >
-                      </td>
-                      <td class="tdpaddingleft" colspan="3">
-
-                        <input type="text" id="summ" class="rmpno-form" >
-                      </td>
-                      <td class="tdpaddingleft" colspan="6">
-
-                        <input type="text" id="recveh" class="rmpno-form" >
-                      </td>
-                    </tr>
+                </td>
+            </tr>
 
 
-            					    <!-- Remove LPR Button -->
-            							<tr>
-            							  <td colspan="18" class="buttonholder">
-            								<!-- Remove LPR Button-->
-            								  <input type="button" class="delete" value="Remove Current">
-            								<!-- Remove LPR Button -->
-            							  </td>
-            							</tr>
-            					    <!-- Remove LPR Button -->
+            <tr class="topaligntr">
+                <td class="tdmiddle" colspan="4">
 
-    						</table>
-    					</div>
-    				</script>
+                    <input type="text" id="felarrextra" class="rmpno-form">
+                </td>
+                <td class="tdmiddle" colspan="5">
+
+                    <input type="text" id="misdarrextra" class="rmpno-form">
+                </td>
+                <td class="tdmiddle" colspan="3">
+
+                    <input type="text" id="summextra" class="rmpno-form">
+                </td>
+                <td class="tdmiddle" colspan="5">
+
+                    <input type="text" id="recvehextra" class="rmpno-form">
+                </td>
+            </tr>
+
+
+      					    <!-- Remove LPR Button -->
+      							<tr>
+      							  <td colspan="18" class="buttonholder">
+      								<!-- Remove LPR Button-->
+      								  <input type="button" class="delete" value="Remove Current">
+      								<!-- Remove LPR Button -->
+      							  </td>
+      							</tr>
+      					    <!-- Remove LPR Button -->
+
+		      </table>
+    		</div>
+    	</script>
 
     <!-- Extra Ends -->
 
