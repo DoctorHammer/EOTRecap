@@ -1305,28 +1305,31 @@
 <!-- Print/Save Buttons  -->
 
     <table class="bottombuttonsholder">
-      <tr>
-        <td class="tdleft">
+      <tr class="topaligntr">
+        <td class="tdmiddle">
 
             <input type="button" id="printbutton" class="print" value="1. Save as PDF" onclick="window.print()">
-              <br>
-            <label for="printbutton" class="print-text">(Select "Save As PDF" or "Microsoft Print to PDF" as the printer)</label>
 
         </td>
-
-        <td class="tdright">
-
+        <td class="tdmiddle">
             <input type="button" id="emailbutton" class="email" value="2. Send Email" onclick="mailto('', '', '');event.preventDefault()">
-              <br>
-            <label for="printbutton" class="email-text">(Attach the PDF file you just saved)</label>
+        </td>
+      </tr>
 
+      <tr class="topaligntr">
+        <td class="tdmiddle">
+            <label class="print-text">(Select "Save As PDF" or "Microsoft Print to PDF" as the printer)</label>
+        </td>
+
+        <td class="tdmiddle">
+            <label class="email-text">(Attach the PDF file you just saved)</label>
         </td>
       </tr>
     </table>
 
 <!-- Print/Save Buttons  -->
 
-<!-- Made by Cadet Shawon -->
+<!-- Made by Shawon -->
 
 
 </body>
