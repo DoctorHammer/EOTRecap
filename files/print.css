@@ -324,7 +324,6 @@ break-inside: avoid;
 
 
 .textarea {
-  display: block;
   width: 100%;
   overflow: visible;
   resize: vertical;
@@ -349,6 +348,8 @@ break-inside: avoid;
   color: gray;
   font-family:vitesse light;
   break-inside: avoid;
+  display: none;
+  visibility: hidden;
 }
 
 
@@ -388,6 +389,8 @@ break-inside: avoid;
   color: gray;
   font-family:vitesse light;
   break-inside: avoid;
+  display: none;
+  visibility: hidden;
 }
 
 
@@ -417,6 +420,8 @@ break-inside: avoid;
   color: gray;
   font-family:vitesse light;
   break-inside: avoid;
+  display: none;
+  visibility: hidden;
 }
 
 
