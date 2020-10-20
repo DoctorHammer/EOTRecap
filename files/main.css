@@ -208,7 +208,7 @@ font-size: 10pt;
   font-style: normal;
   font-weight: 400;
 width: 170px;
-text-align: right;
+text-align: center;
 font-size: 10pt;
 }
 
@@ -216,9 +216,9 @@ font-size: 10pt;
   font-family: Vitesse;
   font-style: normal;
   font-weight: 400;
-width: 150px;
+width: 130px;
 text-align: center;
-padding-left: 10px;
+padding-left: 20px;
 font-size: 10pt;
 }
 
@@ -227,7 +227,7 @@ font-size: 10pt;
   font-style: normal;
   font-weight: 400;
 width: 14em;
-text-align: right;
+text-align: center;
 padding-left: 0px;
 font-size: 10pt;
 
