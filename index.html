@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Made by PO Shawon -->
-
-    <!-- Reused codes from my EOT Recap project -->
-
+    <!-- Made by Cadet Shawon -->
     <meta name="robots" content="noindex">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Daily Rundown</title>
-    <meta name="Daily Rundown" content="Daily Rundown" >
+    <title>EOT Recap</title>
+    <meta name="EOT Recap" content="EOT Recap" >
     <link rel="icon" href="files/favicon.png">
 
     <link rel="stylesheet" href="files/main.css">
@@ -19,7 +16,7 @@
     <script src="files/jquery.repeatable.js"> </script>
 
     <script type="text/javascript">
-      // Warn when user tries to reload page
+      // Warn when user tries to reload/ leave page
          var popit = true;
          window.onbeforeunload = function() {
               if(popit == true) {
@@ -27,39 +24,6 @@
                    return "Reload site? Changes you made may not be saved.";
               }
          }
-    </script>
-
-    <script>
-
-        // Warn when user tries to close page
-
-        window.onbeforeunload = function (e) {
-            e = e || window.event;
-
-            // For IE and Firefox prior to version 4
-            if (e) {
-                e.returnValue = 'Any string';
-            }
-
-            // For Safari
-            return 'Any string';
-        };
-
-    </script>
-
-
-    <script>
-        var input = document.getElementById("DraggableMOS");
-        input.addEventListener('drop', function (event) {
-            event.preventDefault();
-            var textData = event.dataTransfer.getData('text'); // get the dragged value
-            var oldval = event.target.value; // get the old value in the input
-            var newval = oldval + textData; // add it with the value which is dragged upon
-            event.target.value = newval; // change the value with the new value
-        });
-        document.querySelector('[draggable="true"]').addEventListener('dragstart', function(e){
-        e.dataTransfer.setData('text', e.target.innerHTML);
-        });        
     </script>
 
     <script>
@@ -87,23 +51,6 @@
       }
     </script>
 
-
-    <script>
-
-        function selectText(containerid) {
-            if (document.selection) { // IE
-                var range = document.body.createTextRange();
-                range.moveToElementText(document.getElementById(containerid));
-                range.select();
-            } else if (window.getSelection) {
-                var range = document.createRange();
-                range.selectNode(document.getElementById(containerid));
-                window.getSelection().removeAllRanges();
-                window.getSelection().addRange(range);
-            }    
-    </script>
-
-
 </head>
 
 <body>
@@ -118,8 +65,8 @@
 
             <td class="NYPD">
                 <p class="nypdtext">NYPD</p>
-                <p class="pcttext">28th Precinct</p>
-                <p class="eotrecaptext">Daily Rundown</p>
+                <p class="pcttext">19th Precinct</p>
+                <p class="eotrecaptext">End of Tour Recap</p>
             </td>
 
             <td class="topright">
@@ -155,14 +102,14 @@
             <td id="AuthorPlatoonCol" class="AuthorPlatoonCol">
                 <label for="PlatoonPicker" class="label-text">Platoon:</label>
                 <select name="PlatoonPicker" id="PlatoonPicker" class="Platoon-picker">
-                    <option value="3rd Platoon">3rd Platoon</option>
-                    <option value="2nd Platoon">2nd Platoon</option>
                     <option value="1st Platoon">1st Platoon</option>
+                    <option value="2nd Platoon">2nd Platoon</option>
+                    <option value="3rd Platoon">3rd Platoon</option>
                 </select>
             </td>
 
             <td id="AuthorSupervisorCol" class="AuthorSupervisorCol">
-                <label for="supervisor" class="label-text">Supervisor:</label>
+                <label for="supervisor" class="label-text">LT/SGT:</label>
                 <input type="text" id="supervisor" class="supervisorform">
             </td>
         </tr>
@@ -175,14 +122,14 @@
 
 
 <!-- Section -->
-    <!-- Available Resources -->
+    <!-- Index Crime Recap -->
 
     <!-- Section Header -->
 
       <table id="IndexCrimeReportTitle" class="titletable">
           <tr>
               <td colspan="6" class="NYPD">
-                  <p class="eotrecaptext">Available Resources
+                  <p class="eotrecaptext">Index Crime Recap
                   </p>
               </td>
           </tr>
@@ -190,51 +137,74 @@
 
     <!-- Section Header -->
 
-    <!-- Available Resources Permanent begins here -->
+    <!-- Index Crime Recap Permanent begins here -->
     <table id="IndexCrimeRecap_Perma" class="indexcrimerecap_perma">
-
-
-        <tr colspan="10">
-
-            <td class="resourcetdtopleft" colspan="2">
-                <label for="sectorName" class="resource-label-text">Assignment:</label>
-                <span id="sectorName" class="textarea" role="textbox" contenteditable></span>
-            </td>
-
-
-            <td class="resourcetdtopleft" colspan="4">
-                <label for="DraggableMOS" class="resource-label-text">M.O.S</label>
-                <span id="DraggableMOS" class="textarea" role="textbox" contenteditable></span>
-            </td>
-
-
-            <td class="resourcetdtopleft" colspan="2">
-                <label for="RMPNum" class="resource-label-text">RMP#</label>
-                <input name="RMPNum" id="RMPNum" class="textarea" role="textbox" contenteditable>
+        <tr>
+            <td class="tdleft" colspan="2">
+                <label for="CrimeCrimePicker" class="label-text">Crime Type:</label>
+                <select name="SelectCrime" id="CrimeCrimePicker" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="Murder">Murder</option>
+                    <option value="Rape">Rape</option>
+                    <option value="Robbery">Robbery</option>
+                    <option value="Felony Assault">Felony Assault</option>
+                    <option value="Burglary">Burglary</option>
+                    <option value="Grand Larceny">Grand Larceny</option>
+                    <option value="GLA">GLA</option>
                 </select>
             </td>
 
-            <td class="resourcetdtopleft" colspan="2">
-                <label for="mealtime" class="resource-label-text">Meal Time:</label>
-                <input id="mealtime" type="time" class="form-text">
+            <td class="tdleft" colspan="2">
+                <label for="occtime" class="label-text">Occurrence Time:</label>
+                <input id="occtime" type="time" class="form-text">
             </td>
-    <!-- <td class="tdright" colspan="2">
-                <input id="Crimedvcheck" type="checkbox" class="form-text">
-                <label for="Crimedvcheck" class="label-text">Limited</label>
 
-            </td>  -->
+            <td class="tdright" colspan="2">
+                <input id="Crimedvcheck" type="checkbox" class="form-text">
+                <label for="Crimedvcheck" class="label-text">Domestic</label>
+
+                <input id="Crimedvhischeck" type="checkbox" class="form-text">
+                <label for="Crimedvhischeck" class="label-text">DV History</label>
+            </td>
         </tr>
 
 
+        <tr>
+
+            <td class="tdpaddingleft" colspan="3">
+                <label for="crimelocation" class="label-text">Location:</label>
+                <span id="crimelocation" class="textarea" role="textbox" contenteditable></span>
+            </td>
 
 
+            <td class="tdpaddingleft" colspan="3">
+                <label for="crimeperp" class="label-text">Possible Perp/Suspect</label>
+                <span id="crimeperp" class="textarea" role="textbox" contenteditable></span>
+            </td>
 
+        </tr>
+
+
+        <tr>
+
+            <td class="tdpaddingleft" colspan="3">
+                <label for="crimedesc" class="label-text">Description of Crime:</label>
+                <span id="crimedesc" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+
+            <td class="tdpaddingleft" colspan="3">
+                <label for="crimecanv" class="label-text">Locations / Results of Video Canvass:</label>
+                <span id="crimecanv" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+        </tr>
 
 
     </table>
-    <!-- Available Resources Permanent ends here -->
+    <!-- Index Crime Recap Permanent ends here -->
 
-    <!-- Available Resources extra starts here -->
+    <!-- Index Crime Recap extra starts here -->
     <!-- Template Code + Add Button -->
     <form class="extracontainer">
         <fieldset class="index_crimes">
@@ -245,64 +215,86 @@
                 <tr>
                 <td colspan="6" class="tdright">
                     <!-- Add Crime Button-->
-                    <input type="button" class="add" value="Add Resource">
+                    <input type="button" class="add" value="Add Crime">
                     <!-- Add Crime Button -->
                 </td>
                 </tr>
             </table>
         </fieldset>
     </form>
-    <!-- Available Resources Extra -->
+    <!-- Index Crime Recap Extra -->
     <script type="text/template" id="index_crimes">
         <div class="field-group">
-            <table id="IndexCrimeRecap_Extra" class="indexcrimerecap_perma">
+                <table id="IndexCrimeRecap_Extra" class="indexcrimerecap_perma">
+                    <tr>
+                        <td class="tdleft" colspan="2">
+                            <label for="CrimeExtraCrimePicker" class="label-text">Crime Type:</label>
+                            <select name="SelectCrime" id="CrimeExtraCrimePicker" class="form-text">
+                                <option value="Select">Select</option>
+                                <option value="Murder">Murder</option>
+                                <option value="Rape">Rape</option>
+                                <option value="Robbery">Robbery</option>
+                                <option value="Felony Assault">Felony Assault</option>
+                                <option value="Burglary">Burglary</option>
+                                <option value="Grand Larceny">Grand Larceny</option>
+                                <option value="GLA">GLA</option>
+                            </select>
+                        </td>
 
-        <tr colspan="10">
+                        <td class="tdleft" colspan="2">
+                            <label for="occtime" class="label-text">Occurrence Time:</label>
+                            <input id="occtime" type="time" class="form-text">
+                        </td>
 
-            <td class="resourcetdtopleft" colspan="2">
-                <label for="sectorName" class="resource-label-text">Assignment:</label>
-                <span id="sectorName" class="textarea" role="textbox" contenteditable></span>
-            </td>
+                        <td class="tdright" colspan="2">
+                          <input id="crimeExtradvcheck" type="checkbox" class="form-text">
+                          <label for="crimeExtradvcheck" class="label-text">Domestic</label>
 
-
-            <td class="resourcetdtopleft" colspan="4">
-                <label for="DraggableMOS" class="resource-label-text">M.O.S</label>
-                <span id="DraggableMOS" class="textarea" role="textbox" contenteditable></span>
-            </td>
-
-
-            <td class="resourcetdtopleft" colspan="2">
-                <label for="RMPNum" class="resource-label-text">RMP#</label>
-                <input name="RMPNum" id="RMPNum" class="textarea" role="textbox" contenteditable>
-                </select>
-            </td>
-
-            <td class="resourcetdtopleft" colspan="2">
-                <label for="mealtime" class="resource-label-text">Meal Time:</label>
-                <input id="mealtime" type="time" class="form-text">
-            </td>
-    <!-- <td class="tdright" colspan="2">
-                <input id="Crimedvcheck" type="checkbox" class="form-text">
-                <label for="Crimedvcheck" class="label-text">Limited</label>
-
-            </td>  -->
-        </tr>
+                          <input id="crimeExtradvhischeck" type="checkbox" class="form-text">
+                          <label for="crimeExtradvhischeck" class="label-text">DV History</label>
+                        </td>
+                    </tr>
 
 
+                    <tr>
+
+                      <td class="tdpaddingleft" colspan="3">
+                        <label for="crimelocation" class="label-text">Location:</label>
+              					<span id="crimelocation" class="textarea" role="textbox" contenteditable></span>
+                      </td>
 
 
+                      <td class="tdpaddingleft" colspan="3">
+                        <label for="crimeperp" class="label-text">Possible Perp/Suspect</label>
+              					<span id="crimeperp" class="textarea" role="textbox" contenteditable></span>
+                      </td>
+
+                    </tr>
 
 
+                    <tr>
+
+                      <td class="tdpaddingleft" colspan="3">
+                        <label for="crimedesc" class="label-text">Description of Crime:</label>
+              					<span id="crimedesc" class="textarea" role="textbox" contenteditable></span>
+                      </td>
 
 
-            <!-- Available Resources Extra -->
+                      <td class="tdpaddingleft" colspan="3">
+                        <label for="crimeperp" class="label-text">Locations / Results of Video Canvass:</label>
+              					<span id="crimeperp" class="textarea" role="textbox" contenteditable></span>
+                      </td>
+
+                    </tr>
+
+            <!-- Index Crime Recap Extra -->
 
             <!-- Remove Crime Button -->
 
                       <tr>
-                        <td colspan="10" class="buttonholder">
+                        <td colspan="6" class="buttonholder">
                           <!-- Remove Crime Button-->
-                            <input type="button" class="delete" value="Remove Resource">
+                            <input type="button" class="delete" value="Remove Crime">
                           <!-- Remove Crime Button -->
                         </td>
                       </tr>
@@ -311,7 +303,7 @@
               	</table>
               </div>
             </script>
-    <!-- Available Resources Extra -->
+    <!-- Index Crime Recap Extra -->
     <!-- Initialize Script -->
     <script>
         $(function() {
@@ -325,9 +317,9 @@
         });
     </script>
     <!-- Initialize Script -->
-    <!-- Available Resources extra ends here -->
+    <!-- Index Crime Recap extra ends here -->
 
-    <!-- Available Resourcesp -->
+    <!-- Index Crime Recap -->
 
 <!-- Section -->
 
@@ -335,94 +327,891 @@
 
 
 
-
-
-
-  <!-- Section -->
-    <!-- Bank -->
+<!-- Section -->
+    <!-- Arrests -->
 
 
     <!-- Section Header -->
-
-    <div class="ListofMOSDivHidden">
-
-    <table id="CommentsTitle" class="titletable">
+    <table id="ArrestsTitle" class="titletable">
         <tr>
             <td colspan="6" class="NYPD">
-                <p class="eotrecaptext">List of M.O.S
+                <p class="eotrecaptext">Arrests
+                </p>
+                <p class="label-text">(Include arrests from all units/agencies)
                 </p>
             </td>
         </tr>
     </table>
     <!-- Section Header -->
 
-    <!-- List of MOS Permanent begins here -->
+    <!-- Arrests Permanent begins here -->
 
-    <table id="comments_perma" class="comments_perma">
-        <tr colspan="3">
-            <td class="moscol" colspan="1">
-                <div class="mossquad">	Squad 1	</div>
-                    <br>
-                <div class="selectable">	Turk, Melike (955604)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Cruz, Rafael (965698)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Robles, Brandon (962058)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Vinci, Drew (970298)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Almanzar, Roberto (969475)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Narain, Jaswansingh (967222)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Weber, Damian (967387)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Rahman, Ashfaqur (970112)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Cavalieri, Christopher (969574)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Ahmed, Kazi (968213)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Prashad, Arun (968717)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Palaguachiseguencia, Christopher (968692)&nbsp&nbsp|&nbsp&nbsp</div>
+    <table id="Arrests_Perma" class="indexcrimerecap_perma">
+        <tr class="topaligntr">
+            <td class="tdpaddingleft" colspan="16">
+            </td>
+        </tr>
+        <tr class="topaligntr">
+            <td class="tdpaddingleft" colspan="8">
+                <label for="topcharge" class="label-text">Top Charge:</label>
+                <input type="text" id="topcharge" class="form-text">
+
             </td>
 
-            <td class="moscol" colspan="1">
-                <div class="mossquad">	Squad 2	</div>
-                    <br>
-                <div class="selectable">	O'Brien, Shannon (954186)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Espinoza, Marcelo (962388)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Brown, Creel (955770)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Garcia, Caridad (962422)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Milleew, Florence (962619)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Morochoquito, Carlos (971155)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Zimonjic, Harris (971281)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Estevez, Paola (971424)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Mesiouris, Alekos (971564)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Layes, Christian (971522)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	MartinezPaula, Leonel (967991)&nbsp&nbsp|&nbsp&nbsp</div>
-                <div class="selectable">	Delrosario, Richard (947643)&nbsp&nbsp|&nbsp&nbsp</div>
+            <td class="tdpaddingleft" colspan="2">
+                <input id="Arrdvcheck" type="checkbox" class="form-text">
+                <label for="Arrdvcheck" class="label-text">Domestic</label>
+
+            </td>
+            <td class="tdpaddingleft" colspan="2">
+                <input id="hopecheck" type="checkbox" class="form-text">
+                <label for="hopecheck" class="label-text">H.O.P.E.</label>
+
+            </td>
+            <td class="tdpaddingleft" colspan="2">
+                <input id="datcheck" type="checkbox" class="form-text">
+                <label for="datcheck" class="label-text">DAT</label>
+
+            </td>
+            <td class="tdpaddingleft" colspan="2">
+                <input id="bwccheck" type="checkbox" class="form-text">
+                <label for="bwccheck" class="label-text">BWC shared w/ ADA</label>
+
+            </td>
+        </tr>
+
+        <tr>
+
+            <td class="tdleft" colspan="5">
+                <label for="ArrCrimePicker" class="label-text">Crime Type:</label>
+                <select name="SelectCrime" id="ArrCrimePicker" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="Felony">Felony</option>
+                    <option value="Misdemeanor">Misdemeanor</option>
+                </select>
             </td>
 
 
-            <td class="moscol" colspan="1">
-                <div class="mossquad">	Squad 3	</div>
-                    <br>
-                    <div class="selectable">	Huda, Syed (947088)&nbsp&nbsp|&nbsp&nbsp</div>
-                    <div class="selectable">	Shawon, Delwar (972421)&nbsp&nbsp|&nbsp&nbsp</div>
-                    <div class="selectable">	Uribe, Robert (937662)&nbsp&nbsp|&nbsp&nbsp</div>
-                    <div class="selectable">	Idowu, Adesina (969811)&nbsp&nbsp|&nbsp&nbsp</div>
-                    <div class="selectable">	Lobsang, Jamyang (970666)&nbsp&nbsp|&nbsp&nbsp</div>
-                    <div class="selectable">	Barley, Olivia (970405)&nbsp&nbsp|&nbsp&nbsp</div>
-                    <div class="selectable">	Ramirez, Neris (939271)&nbsp&nbsp|&nbsp&nbsp</div>
-                    <div class="selectable">	Dzeviatka, Ilya (972387)&nbsp&nbsp|&nbsp&nbsp</div>
+            <td class="tdleft" colspan="5">
+                <label for="ArrStopyesno" class="label-text">Stop Report Required?</label>
+                <select name="ArrStopyesno" id="ArrStopyesno" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </td>
+
+            <td class="tdleft" colspan="4">
+                <label for="arrPrioryesno" class="label-text">Priors?</label>
+                <select name="arrPrioryesno" id="arrPrioryesno" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Unknown">Unknown</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+
+            <td class="tdleft" colspan="6">
+                <label for="arrestlocation" class="label-text">Location:</label>
+                <span id="arrestlocation" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+            <td class="tdleft" colspan="1">
+
+            </td>
+
+            <td class="tdleft" colspan="5">
+                <label for="arrestperp" class="label-text">Perp:</label>
+                <span id="arrestperp" class="textarea" role="textbox" contenteditable></span>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td colspan="10">
+                <label for="crimedesc" class="label-text">Description of Arrest:</label>
+                <span class="textarea" role="textbox" contenteditable></span>
+            </td>
+        </tr>
+
+    </table>
+
+    <!-- Arrests Permanent ends here -->
+
+
+
+
+    <!-- Arrests extra starts here -->
+    <!-- Template Code + Add Button -->
+    <form class="extracontainer">
+        <fieldset class="extraarrests">
+
+            <div class="repeatable">
+            </div>
+
+            <table class="buttonholder">
+                <tr>
+                <td colspan="6" class="tdright">
+                    <!-- Add Arrest Button-->
+                    <input type="button" class="add" value="Add Arrest">
+                    <!-- Add Arrest Button -->
+                </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <!-- Template Code + Add Button -->
+
+
+    <!-- Extra Inside -->
+    <script type="text/template" id="extraarrests">
+        <div class="field-group">
+
+                <table id="IndexCrimeRecap_Perma" class="indexcrimerecap_perma">
+                  <tr class="topaligntr">
+                    <td class="tdpaddingleft" colspan="16">
+                  </td>
+                </tr>
+                  <tr class="topaligntr">
+                    <td class="tdpaddingleft" colspan="8">
+                      <label for="topcharge" class="label-text">Top Charge:</label>
+                      <input type="text" id="topcharge" class="form-text" >
+
+                    </td>
+
+                    <td class="tdpaddingleft"  colspan="2">
+                      <input id="ArrExtradvcheck" type="checkbox" class="form-text">
+                      <label for="ArrExtradvcheck" class="label-text">Domestic</label>
+
+                    </td>
+                    <td class="tdpaddingleft"  colspan="2">
+                      <input id="hopecheck" type="checkbox" class="form-text">
+          						<label for="hopecheck" class="label-text">H.O.P.E.</label>
+
+                    </td>
+                    <td class="tdpaddingleft"  colspan="2">
+                      <input id="datextracheck" type="checkbox" class="form-text">
+                      <label for="datextracheck" class="label-text">DAT</label>
+
+                    </td>
+                    <td class="tdpaddingleft"  colspan="2">
+                      <input id="bwccheck" type="checkbox" class="form-text">
+                      <label for="bwccheck" class="label-text">BWC shared w/ ADA</label>
+
+                    </td>
+                  </tr>
+
+                    <tr>
+
+                      <td class="tdleft" colspan="5">
+            						<label for="ArrExtraCrimePicker" class="label-text">Crime Type:</label>
+            						<select name="ArrExtraCrimePicker" id="ArrExtraCrimePicker" class="form-text">
+                          <option value="Select">Select</option>
+                          <option value="Felony">Felony</option>
+            							<option value="Misdemeanor">Misdemeanor</option>
+            						</select>
+            					</td>
+
+
+                      <td class="tdleft"  colspan="5">
+                          <label for="ArrStopExtrayesno" class="label-text">Stop Report Required?</label>
+                          <select name="ArrStopExtrayesno" id="ArrStopExtrayesno" class="form-text">
+                          <option value="Select">Select</option>
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                          </select>
+                        </td>
+
+                      <td class="tdleft"  colspan="4">
+                          <label for="ArrPriorExtrayesno" class="label-text">Priors?</label>
+                          <select name="ArrPriorExtrayesno" id="ArrPriorExtrayesno" class="form-text" >
+                          <option value="Select">Select</option>
+                          <option value="Yes">Yes</option>
+                          <option value="No">No</option>
+                          <option value="Unknown">Unknown</option>
+                          </select>
+                      </td>
+                    </tr>
+
+                    <tr>
+
+                      <td class="tdleft" colspan="6">
+                        <label for="arrestlocation" class="label-text">Location:</label>
+              					<span id="arrestlocation" class="textarea" role="textbox" contenteditable></span>
+                      </td>
+
+                      <td class="tdleft" colspan="1">
+
+                      </td>
+
+                      <td class="tdleft" colspan="5">
+                        <label for="arrestperp" class="label-text">Perp:</label>
+              					<span id="arrestperp" class="textarea" role="textbox" contenteditable></span>
+                      </td>
+
+                    </tr>
+
+            				<tr>
+            				  <td colspan="10">
+            					<label for="crimedesc" class="label-text">Description of Arrest:</label>
+            					<span class="textarea" role="textbox" contenteditable></span>
+            				  </td>
+            				</tr>
+
+            					    <!-- Remove Arrest Button -->
+            							<tr>
+            							  <td colspan="14" class="buttonholder">
+            								<!-- Remove Arrest Button-->
+            								  <input type="button" class="delete" value="Remove Arrest">
+            								<!-- Remove Arrest Button -->
+            							  </td>
+            							</tr>
+            					    <!-- Remove Arrest Button -->
+
+    						</table>
+    					</div>
+    				</script>
+
+    <!-- Extra Ends -->
+
+    <!-- Initialize Script -->
+    <script>
+        $(function() {
+            $(".extraarrests .repeatable").repeatable({
+                addTrigger: ".extraarrests .add",
+                deleteTrigger: ".extraarrests .delete",
+                template: "#extraarrests",
+                startWith: 1,
+                max: null
+            });
+        });
+    </script>
+    <!-- Initialize Script -->
+
+    <!-- Arrests extra ends here -->
+
+    <!-- Arrests -->
+
+<!-- Section -->
+
+
+
+
+
+<!-- Section -->
+    <!-- Off Air Time -->
+
+
+    <!-- Section Header -->
+    <table id="OATTitle" class="titletable">
+        <tr>
+            <td colspan="6" class="NYPD">
+                <p class="eotrecaptext">Off Air Time
+                </p>
+            </td>
+        </tr>
+    </table>
+    <!-- Section Header -->
+
+    <!-- OAT Permanent begins here -->
+
+    <table id="OAT_perma" class="oat_perma">
+
+        <tr class="topaligntr">
+            <td colspan="16">
+            </td>
+        </tr>
+
+        <tr class="topaligntr">
+            <td colspan="2">
+                <label for="oatsectorpicker" class="label-text">Sector:</label>
+                <select name="oatsectorpicker" id="oatsectorpicker" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="A">A</option>
+                    <option value="A2">A2</option>
+                    <option value="B">B</option>
+                    <option value="B2">B2</option>
+                    <option value="C">C</option>
+                    <option value="C2">C2</option>
+                    <option value="D">D</option>
+                    <option value="D2">D2</option>
+                </select>
+            </td>
+
+            <td class="tdpaddingleft" colspan="3">
+                <label for="condition" class="label-text">Condition:</label>
+                <span id="condition" class="textarea" role="textbox" contenteditable=""></span>
+            </td>
+
+
+            <td class="tdpaddingleft" colspan="3">
+                <label for="offairtime" class="label-text">Off Air Time:</label>
+                <span id="offairtime" class="textarea" role="textbox" contenteditable=""></span>
+            </td>
+
+
+
+            <td class="tdpaddingleft" colspan="8">
+                <label for="oatlocation" class="label-text">Location:</label>
+                <span id="oatlocation" class="textarea" role="textbox" contenteditable=""></span>
             </td>
 
         </tr>
 
     </table>
 
-
-</div>
-
-
-
-    <!-- List of MOS Permanent ends here -->
+    <!-- OAT Permanent ends here -->
 
 
 
-<br>
 
+    <!-- OAT extra starts here -->
+    <!-- Template Code + Add Button -->
+    <form class="extracontainer">
+        <fieldset class="extraoat">
+
+            <div class="repeatable">
+            </div>
+
+            <table class="buttonholder">
+                <tr>
+                <td colspan="6" class="tdright">
+                    <!-- Add OAT Button-->
+                    <input type="button" class="add" value="Add Another">
+                    <!-- Add OAT Button -->
+                </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <!-- Template Code + Add Button -->
+
+
+    <!-- Extra Inside -->
+    <script type="text/template" id="extraoat">
+        <div class="field-group">
+
+
+                            <table id="OAT_extra" class="oat_perma">
+
+                              <tr class="topaligntr">
+                                <td colspan="16">
+                                </td>
+
+                              <tr class="topaligntr">
+                                <td colspan="2">
+                                  <label for="oat_extra_sectorpicker" class="label-text">Sector:</label>
+                                  <select name="oat_extra_sectorpicker" id="oat_extra_sectorpicker" class="form-text">
+                                    <option value="Select">Select</option>
+                                    <option value="A">A</option>
+                                    <option value="A2">A2</option>
+                                    <option value="B">B</option>
+                                    <option value="B2">B2</option>
+                                    <option value="C">C</option>
+                                    <option value="C2">C2</option>
+                                    <option value="D">D</option>
+                                    <option value="D2">D2</option>
+                                  </select>
+                                </td>
+
+                                <td class="tdpaddingleft" colspan="3">
+                                  <label for="condition" class="label-text">Condition:</label>
+                                  <span id="condition" class="textarea" role="textbox" contenteditable=""></span>
+                                </td>
+
+
+                                <td class="tdpaddingleft" colspan="3">
+                                  <label for="offairtime" class="label-text">Off Air Time:</label>
+                                  <span id="offairtime" class="textarea" role="textbox" contenteditable=""></span>
+                                </td>
+
+
+
+                                <td class="tdpaddingleft" colspan="8">
+                                  <label for="oatlocation" class="label-text">Location:</label>
+                                  <span id="oatlocation" class="textarea" role="textbox" contenteditable=""></span>
+                                </td>
+
+                              </tr>
+
+
+
+            					    <!-- Remove OAT Button -->
+            							<tr>
+            							  <td colspan="16" class="buttonholder">
+            								<!-- Remove OAT Button-->
+            								  <input type="button" class="delete" value="Remove Current">
+            								<!-- Remove OAT Button -->
+            							  </td>
+            							</tr>
+            					    <!-- Remove OAT Button -->
+
+    						</table>
+    					</div>
+    				</script>
+
+    <!-- Extra Ends -->
+
+    <!-- Initialize Script -->
+    <script>
+        $(function() {
+            $(".extraoat .repeatable").repeatable({
+                addTrigger: ".extraoat .add",
+                deleteTrigger: ".extraoat .delete",
+                template: "#extraoat",
+                startWith: 1,
+                max: null
+            });
+        });
+    </script>
+    <!-- Initialize Script -->
+
+    <!-- OAT extra ends here -->
+
+    <!-- OAT -->
+<!-- Section -->
+
+
+
+
+<!-- Section -->
+    <!-- Newsworthy -->
+
+
+    <!-- Section Header -->
+    <table id="NewsTitle" class="titletable">
+        <tr>
+            <td colspan="6" class="NYPD">
+                <p class="eotrecaptext">Newsworthy/Unusual Incidents
+                </p>
+            </td>
+        </tr>
+    </table>
+    <!-- Section Header -->
+
+    <!-- Newsworthy Permanent begins here -->
+
+    <table id="news_perma" class="news_perma">
+
+        <tr class="topaligntr">
+            <td colspan="6">
+                <label for="incidentpicker" class="label-text">Incident Type</label>
+                <select name="incidentpicker" id="incidentpicker" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="Off Duty">Off Duty</option>
+                    <option value="Naloxone">Naloxone</option>
+                    <option value="Overdose">Overdose</option>
+                    <option value="CIS Job">CIS Job</option>
+                    <option value="Ped Struck">Ped Struck</option>
+                    <option value="Other">Other</option>
+                </select>
+            </td>
+
+            <td class="tdpaddingleft" colspan="8" rowspan="2">
+                <label for="details" class="label-text">MOS Responding / Location / Description:</label>
+                <span id="details" class="textareanews" role="textbox" contenteditable=""></span>
+            </td>
+        </tr>
+
+
+        <td class="tdpaddingleft" colspan="6">
+            <label for="oatother" class="label-text">If other, specify:</label>
+            <span id="oatother" class="textarea" role="textbox" contenteditable=""></span>
+        </td>
+
+        </tr>
+
+    </table>
+
+    <!-- Newsworthy Permanent ends here -->
+
+
+
+
+    <!-- Newsworthy extra starts here -->
+    <!-- Template Code + Add Button -->
+    <form class="extracontainer">
+        <fieldset class="extranews">
+
+            <div class="repeatable">
+            </div>
+
+            <table class="buttonholder">
+                <tr>
+                <td colspan="6" class="tdright">
+                    <!-- Add News Button-->
+                    <input type="button" class="add" value="Add Another">
+                    <!-- Add News Button -->
+                </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <!-- Template Code + Add Button -->
+
+
+    <!-- Extra Inside -->
+    <script type="text/template" id="extranews">
+        <div class="field-group">
+
+                <table id="news_perma" class="news_perma">
+
+                  <tr class="topaligntr">
+                    <td colspan="6">
+                      <label for="incidentpicker" class="label-text">Incident Type</label>
+                      <select name="incidentpicker" id="incidentpicker" class="form-text">
+                        <option value="Select">Select</option>
+                        <option value="Off Duty">Off Duty</option>
+                        <option value="Naloxone">Naloxone</option>
+                        <option value="Overdose">Overdose</option>
+                        <option value="CIS Job">CIS Job</option>
+                        <option value="Ped Struck">Ped Struck</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </td>
+
+                    <td class="tdpaddingleft" colspan="8" rowspan="2">
+                      <label for="details" class="label-text">MOS Responding / Location / Description:</label>
+                      <span id="details" class="textarea" role="textbox" contenteditable=""></span>
+                    </td>
+                  </tr>
+
+
+                    <td class="tdpaddingleft" colspan="6">
+                      <label for="offairtime" class="label-text">If other, specify:</label>
+                      <span id="offairtime" class="textarea" role="textbox" contenteditable=""></span>
+                    </td>
+
+                  </tr>
+
+
+
+            					    <!-- Remove News Button -->
+            							<tr>
+            							  <td colspan="16" class="buttonholder">
+            								<!-- Remove News Button-->
+            								  <input type="button" class="delete" value="Remove Current">
+            								<!-- Remove News Button -->
+            							  </td>
+            							</tr>
+            					    <!-- Remove News Button -->
+
+    						</table>
+    					</div>
+    				</script>
+
+    <!-- Extra Ends -->
+
+    <!-- Initialize Script -->
+    <script>
+        $(function() {
+            $(".extranews .repeatable").repeatable({
+                addTrigger: ".extranews .add",
+                deleteTrigger: ".extranews .delete",
+                template: "#extranews",
+                startWith: 1,
+                max: null
+            });
+        });
+    </script>
+    <!-- Initialize Script -->
+
+    <!-- News extra ends here -->
+
+    <!-- Newsworthy -->
+<!-- Section -->
+
+
+
+
+<!-- Section -->
+    <!-- LPR -->
+
+
+    <!-- Section Header -->
+    <table id="LPRTitle" class="titletable">
+        <tr>
+            <td colspan="6" class="NYPD">
+                <p class="eotrecaptext">Plate Reader RMP Assignment
+                </p>
+            </td>
+        </tr>
+    </table>
+    <!-- Section Header -->
+
+    <!-- LPR Permanent begins here -->
+
+    <table id="lpr_perma" class="lpr_perma">
+
+        <tr class="topaligntr">
+            <td class="tdmiddle" colspan="2">
+                <label for="rmpno" class="label-text">RMP#:</label>
+                <br><br>
+                <input type="text" id="rmpno" class="rmpno-form">
+            </td>
+
+            <td class="tdmiddle" colspan="4">
+                <label for="lpryesno" class="label-text">LPR Operational?</label>
+                <br><br>
+                <select name="lpryesno" id="lpryesno" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </td>
+
+            <td class="tdmiddle" colspan="3">
+                <label for="lprsectorpicker" class="label-text">Sector:</label>
+                <br><br>
+                <select name="lprsectorpicker" id="lprsectorpicker" class="form-text">
+                    <option value="Select">Select</option>
+                    <option value="A">A</option>
+                    <option value="A2">A2</option>
+                    <option value="B">B</option>
+                    <option value="B2">B2</option>
+                    <option value="C">C</option>
+                    <option value="C2">C2</option>
+                    <option value="D">D</option>
+                    <option value="D2">D2</option>
+                </select>
+            </td>
+
+
+            <td class="tdpaddingleft" colspan="4" rowspan="2">
+                <label for="mos1" class="label-text">MOS Assigned #1</label>
+                <span id="mos1" class="textarea" role="textbox" contenteditable=""></span>
+            </td>
+
+            <td class="tdpaddingleft" colspan="4" rowspan="2">
+                <label for="mos2" class="label-text">MOS Assigned #2</label>
+                <span id="mos2" class="textarea" role="textbox" contenteditable=""></span>
+            </td>
+        </tr>
+
+        <tr class="topaligntr">
+        </tr>
+
+        <tr class="topaligntr">
+            <td class="tdpaddingleft" colspan="6">
+                <input id="malfcheck" type="checkbox" class="form-text" vertical>
+                <label for="malfcheck" class="label-text">Malfunctions During Tour?</label>
+            </td>
+
+            <td class="tdpaddingleft" colspan="11">
+                <label for="problems" class="label-text">Describe any problems: (Indicate log # if out of service)</label>
+                <span id="problems" class="textarea" role="textbox" contenteditable=""></span>
+            </td>
+        </tr>
+
+        <tr class="topaligntr">
+            <td class="tdmiddle" colspan="4">
+                <label for="felarr" class="label-text">Felony Arrests</label>
+
+            </td>
+            <td class="tdmiddle" colspan="5">
+                <label for="misdarr" class="label-text">Misdemeanor Arrests</label>
+
+            </td>
+            <td class="tdmiddle" colspan="3">
+                <label for="summ" class="label-text">Summonses</label>
+
+            </td>
+            <td class="tdmiddle" colspan="5">
+                <label for="recveh" class="label-text">Recovered Vehicles</label>
+
+            </td>
+        </tr>
+
+
+        <tr class="topaligntr">
+            <td class="tdmiddle" colspan="4">
+
+                <input type="text" id="felarr" class="rmpno-form">
+            </td>
+            <td class="tdmiddle" colspan="5">
+
+                <input type="text" id="misdarr" class="rmpno-form">
+            </td>
+            <td class="tdmiddle" colspan="3">
+
+                <input type="text" id="summ" class="rmpno-form">
+            </td>
+            <td class="tdmiddle" colspan="5">
+
+                <input type="text" id="recveh" class="rmpno-form">
+            </td>
+        </tr>
+
+    </table>
+
+    <!-- LPR Permanent ends here -->
+
+
+    <!-- LPR extra starts here -->
+    <!-- Template Code + Add Button -->
+    <form class="extracontainer">
+        <fieldset class="extralpr">
+
+            <div class="repeatable">
+            </div>
+
+            <table class="buttonholder">
+                <tr>
+                <td colspan="6" class="tdright">
+                    <!-- Add LPR Button-->
+                    <input type="button" class="add" value="Add Another">
+                    <!-- Add LPR Button -->
+                </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <!-- Template Code + Add Button -->
+
+
+    <!-- Extra Inside -->
+    <script type="text/template" id="extralpr">
+      <div class="field-group">
+
+          <table id="lpr_extra" class="lpr_perma">
+            <tr class="topaligntr">
+                <td class="tdmiddle" colspan="2">
+                    <label for="rmpnoextra" class="label-text">RMP#:</label>
+                    <br><br>
+                    <input type="text" id="rmpnoextra" class="rmpno-form">
+                </td>
+
+                <td class="tdmiddle" colspan="4">
+                    <label for="lpryesnoextra" class="label-text">LPR Operational?</label>
+                    <br><br>
+                    <select name="lpryesno" id="lpryesnoextra" class="form-text">
+                        <option value="Select">Select</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </td>
+
+                <td class="tdmiddle" colspan="2">
+                    <label for="lprsectorpickerextra" class="label-text">Sector:</label>
+                    <br><br>
+                    <select name="lprsectorpickerextra" id="lprsectorpickerextra" class="form-text">
+                        <option value="Select">Select</option>
+                        <option value="A">A</option>
+                        <option value="A2">A2</option>
+                        <option value="B">B</option>
+                        <option value="B2">B2</option>
+                        <option value="C">C</option>
+                        <option value="C2">C2</option>
+                        <option value="D">D</option>
+                        <option value="D2">D2</option>
+                    </select>
+                </td>
+
+
+                <td class="tdpaddingleft" colspan="4" rowspan="2">
+                    <label for="mos1extra" class="label-text">MOS Assigned #1</label>
+                    <span id="mos1extra" class="textarea" role="textbox" contenteditable=""></span>
+                </td>
+
+                <td class="tdpaddingleft" colspan="5" rowspan="2">
+                    <label for="mos2extra" class="label-text">MOS Assigned #2</label>
+                    <span id="mos2extra" class="textarea" role="textbox" contenteditable=""></span>
+                </td>
+            </tr>
+
+            <tr class="topaligntr">
+            </tr>
+
+            <tr class="topaligntr">
+
+                <td class="tdpaddingleft" colspan="6">
+                    <input id="malfcheckextra" type="checkbox" class="form-text" vertical>
+                    <label for="malfcheckextra" class="label-text">Malfunctions During Tour?</label>
+                </td>
+
+                <td class="tdpaddingleft" colspan="11">
+                    <label for="problemsextra" class="label-text">Describe any problems: (Indicate log # if out of service)</label>
+                    <span id="problemsextra" class="textarea" role="textbox" contenteditable=""></span>
+                </td>
+            </tr>
+
+            <tr class="topaligntr">
+                <td class="tdmiddle" colspan="4">
+                    <label for="felarrextra" class="label-text">Felony Arrests</label>
+
+                </td>
+                <td class="tdmiddle" colspan="5">
+                    <label for="misdarrextra" class="label-text">Misdemeanor Arrests</label>
+
+                </td>
+                <td class="tdmiddle" colspan="3">
+                    <label for="summextra" class="label-text">Summonses</label>
+
+                </td>
+                <td class="tdmiddle" colspan="5">
+                    <label for="recvehextra" class="label-text">Recovered Vehicles</label>
+
+                </td>
+            </tr>
+
+
+            <tr class="topaligntr">
+                <td class="tdmiddle" colspan="4">
+
+                    <input type="text" id="felarrextra" class="rmpno-form">
+                </td>
+                <td class="tdmiddle" colspan="5">
+
+                    <input type="text" id="misdarrextra" class="rmpno-form">
+                </td>
+                <td class="tdmiddle" colspan="3">
+
+                    <input type="text" id="summextra" class="rmpno-form">
+                </td>
+                <td class="tdmiddle" colspan="5">
+
+                    <input type="text" id="recvehextra" class="rmpno-form">
+                </td>
+            </tr>
+
+
+      					    <!-- Remove LPR Button -->
+      							<tr>
+      							  <td colspan="18" class="buttonholder">
+      								<!-- Remove LPR Button-->
+      								  <input type="button" class="delete" value="Remove Current">
+      								<!-- Remove LPR Button -->
+      							  </td>
+      							</tr>
+      					    <!-- Remove LPR Button -->
+
+		      </table>
+    		</div>
+    	</script>
+
+    <!-- Extra Ends -->
+
+    <!-- Initialize Script -->
+    <script>
+        $(function() {
+            $(".extralpr .repeatable").repeatable({
+                addTrigger: ".extralpr .add",
+                deleteTrigger: ".extralpr .delete",
+                template: "#extralpr",
+                startWith: 1,
+                max: null
+            });
+        });
+    </script>
+    <!-- Initialize Script -->
+
+    <!-- LPR extra ends here -->
+
+    <!-- LPR -->
+<!-- Section -->
 
 
 
@@ -436,7 +1225,7 @@
     <table id="CommentsTitle" class="titletable">
         <tr>
             <td colspan="6" class="NYPD">
-                <p class="eotrecaptext">Additional Info
+                <p class="eotrecaptext">Additional Info / Comments / Feedback
                 </p>
             </td>
         </tr>
@@ -456,6 +1245,7 @@
     </table>
 
     <!-- Comments Permanent ends here -->
+
 
 
 
@@ -540,39 +1330,27 @@
       <tr class="topaligntr">
         <td class="tdmiddle">
 
-            <input type="button" id="printbutton" class="print" value="Print" onclick="window.print()">
+            <input type="button" id="printbutton" class="print" value="1. Save as PDF" onclick="window.print()">
 
-     
         </td>
-
-<!-- Email button not used   
-
         <td class="tdmiddle">
             <input type="button" id="emailbutton" class="email" value="2. Send Email" onclick="mailto('', '', '');event.preventDefault()">
         </td>
-
--->  
       </tr>
 
-      <!-- labels not used  
       <tr class="topaligntr">
         <td class="tdmiddle">
-            <label class="print-text">(Click to print)</label>
+            <label class="print-text">(Select "Save As PDF" or "Microsoft Print to PDF" as the printer)</label>
         </td>
- 
+
         <td class="tdmiddle">
             <label class="email-text">(Attach the PDF file you just saved)</label>
         </td>
-
-
-
       </tr>
-
--->  
 
       <tr class="topaligntr">
         <td class="tdmiddle" colspan="2">
-          <p class="easteregg">Made by PO Shawon 972421</p>
+          <p class="easteregg">CDT Shawon</p>
         </td>
       </tr>
 
